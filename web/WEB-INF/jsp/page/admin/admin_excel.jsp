@@ -178,6 +178,7 @@
 
         return [ year, month, day ].join('-');
     }
+
     // function deleteuser(id) {
     //     var user = alluser[id];
     //     var check = confirm(user.name + "[" + user.id + "]를 정말 삭제하시겠습니까?");
