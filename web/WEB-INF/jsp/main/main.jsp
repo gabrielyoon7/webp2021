@@ -83,7 +83,7 @@
 <%--                    </div>--%>
                     <div class="row align-items-md-stretch">
                         <%--                            left side start--%>
-                        <div class="col-xxl-9" id="main1_left">
+                        <div class="col-xxl" id="main1_left">
                             <div class="py-2 col-12">
                                 <%--                                    carousel start--%>
                                 <div id="myCarousel" class="h-100 carousel slide card border border-primary"
@@ -110,7 +110,7 @@
                             <%--                                bbs and reg start--%>
                             <div class="row">
                                 <div class="col-xl-6 py-2 " id="main2_left">
-                                    <div class=" p-3 card border border-primary m-0" style="height : 493px;">
+                                    <div class=" p-3 card border border-primary m-0" style="height : 550px;">
                                         <div class="">
                                             <div class="mb-2 d-flex justify-content-between border-bottom">
                                                 <div class="nav nav-tabs " id="nav-tab" role="tablist">
@@ -148,7 +148,7 @@
                                 </div>
 
                                 <div class="col-xl-6 py-2 " id="main2_center">
-                                    <div class=" p-3 border border-primary card m-0" style="height : 493px;">
+                                    <div class=" p-3 border border-primary card m-0" style="height : 550px;">
                                         <div>
                                             <div class="mb-2 d-flex justify-content-between border-bottom">
                                                 <div class="nav nav-tabs" id="nav-tab2" role="tablist">
@@ -184,30 +184,30 @@
 
 
                         <%--                            right side start--%>
-                        <div class="col-xxl-3" id="main1_right">
-                            <div class="row">
-                                <div class="py-2 col-xxl-12 col-sm-6">
-                                    <div class=" h-100 border border-primary card m-0" id="favorite_menu" style=""></div>
-                                </div>
-                                <div class="py-2 col-xxl-12 col-sm-6">
-                                    <div class=" p-3 border border-primary card m-0" style="height : 493px;">
-                                        <div class="mb-2 d-flex justify-content-between border-bottom">
-                                            <div class="nav nav-tabs" role="tablist">
-                                                <button class="nav-link active"><strong>주요 일정</strong></button>
-                                            </div>
-                                            <div class="morebtn">
-                                                <div class="py-2">
-                                                    <a data-bs-toggle="tooltip" data-bs-placement="top"  title="일정 보기">
-                                                        <i class="bi bi-plus-lg col-sm-2 text-end" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addSearchModal()"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-content" id="schContent" style=""></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <div class="col-xxl-3" id="main1_right">--%>
+<%--                            <div class="row">--%>
+<%--                                <div class="py-2 col-xxl-12 col-sm-6">--%>
+<%--                                    <div class=" h-100 border border-primary card m-0" id="favorite_menu" style=""></div>--%>
+<%--                                </div>--%>
+<%--                                <div class="py-2 col-xxl-12 col-sm-6">--%>
+<%--                                    <div class=" p-3 border border-primary card m-0" style="height : 493px;">--%>
+<%--                                        <div class="mb-2 d-flex justify-content-between border-bottom">--%>
+<%--                                            <div class="nav nav-tabs" role="tablist">--%>
+<%--                                                <button class="nav-link active"><strong>주요 일정</strong></button>--%>
+<%--                                            </div>--%>
+<%--                                            <div class="morebtn">--%>
+<%--                                                <div class="py-2">--%>
+<%--                                                    <a data-bs-toggle="tooltip" data-bs-placement="top"  title="일정 보기">--%>
+<%--                                                        <i class="bi bi-plus-lg col-sm-2 text-end" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addSearchModal()"></i>--%>
+<%--                                                    </a>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="tab-content" id="schContent" style=""></div>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                         <%--                            left side end--%>
                     </div>
 
@@ -560,11 +560,17 @@
         .index_post_link {
             width: 100px;
         }
+        .carousel-img {
+            height: 140px;
+        }
     }
 
     @media (min-width: 320px) {
         .index_post_link {
             width: 150px;
+        }
+        .carousel-img {
+            height: 160px;
         }
     }
 
@@ -572,11 +578,17 @@
         .index_post_link {
             width: 200px;
         }
+        .carousel-img {
+            height: 180px;
+        }
     }
 
     @media (min-width: 400px) {
         .index_post_link {
             width: 250px;
+        }
+        .carousel-img {
+            height: 200px;
         }
     }
 
@@ -584,11 +596,17 @@
         .index_post_link {
             width: 300px;
         }
+        .carousel-img {
+            height: 220px;
+        }
     }
 
     @media (min-width: 576px) {
         .index_post_link {
             width: 390px;
+        }
+        .carousel-img {
+            height: 250px;
         }
     }
 
@@ -596,33 +614,42 @@
         .index_post_link {
             width: 560px;
         }
+        .carousel-img {
+            height: 350px;
+        }
     }
 
     @media (min-width: 992px) {
         .index_post_link {
             width: 800px;
         }
+        .carousel-img {
+            height: 580px;
+        }
     }
 
     @media (min-width: 1200px) {
         .index_post_link {
-            width: 280px;
+            width: 290px;
+        }
+        .carousel-img {
+            height: 600px;
         }
     }
 
     @media (min-width: 1400px) {
         .carousel-img {
-            height: 495px;
+            height: 700px;
         }
 
         .index_post_link {
-            width: 262px;
+            width: 300px;
         }
     }
 
     @media (min-width: 1600px) {
         .index_post_link {
-            width: 337px;
+            width: 450px;
         }
         .title_logo, .title_text{
             float: left;

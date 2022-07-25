@@ -32,6 +32,7 @@
         callSetupTableView4();
     })
     function callSetupTableView4(){
+
         $('#table4').bootstrapTable('load',tableData4());
         $('#table4').bootstrapTable('refresh');
     }
