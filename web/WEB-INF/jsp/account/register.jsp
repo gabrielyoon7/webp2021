@@ -159,7 +159,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-8">
+                                    <div class="col-12">
                                         <label for="hope_type"
                                                class="form-label">희망구분<span> (관리자 승인후 변경됩니다.)</span></label>
                                         <select class="form-select" id="hope_type" required></select>
@@ -168,7 +168,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-12">
                                         <label for="major" class="form-label">학과</label>
                                         <select class="form-select" id="major" required></select>
                                         <div class="invalid-feedback">
@@ -392,14 +392,14 @@
     function registerReset() {
         var list = $('#registerReset');
         var text = '';
-        text += '<div class="row justify-content-md-center"  id="registerReset">'
-            + '<div class="" > <h4 class="mb-3">외부인</h4>'
+        text += '<div>'
+            + '<div class="" > <h4 class="mb-3">회원가입(외부인)</h4>'
             + '<div class="needs-validation" novalidate> <div class="row g-3">'
             + '<div class="">'
             + '<label for="id" class="form-label">아이디</label><span id="warningID"></span>'
-            + '<div class="row align-items-md-stretch"><div class="col-8">'
+            + '<div class="input-group mb-3">'
             + '<input type="text" class="form-control" id="id" placeholder="아이디를 입력해주세요." value="" required>'
-            + '</div><div class="col-4"> <div class="btn btn-primary" onclick="checkID()">중복확인</div> </div> </div> <div class="invalid-feedback">아이디를 입력해 주세요. </div> </div>'
+            + '<button class="btn btn-primary" onclick="checkID()">중복확인</button></div> <div class="invalid-feedback">아이디를 입력해 주세요. </div> </div>'
             + '<div class="col-12"> <label for="pwd" class="form-label">비밀번호<span > (가능한 특수문자: !,@,#,$,%,^,&,*,(,) )</span></label>'
             + '<div class="input-group has-validation"><input type="password" class="form-control" id="pwd" placeholder="8 글자 이상으로 해주세요." required>'
             + '<div class="invalid-feedback">비밀번호를 입력해주세요</div></div></div><div class="col-12">'
