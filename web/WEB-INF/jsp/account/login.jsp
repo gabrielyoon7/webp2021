@@ -42,67 +42,12 @@
             }
         </script>
 
-<%--<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">--%>
-
-
-<style>
-
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-    }
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-        }
-    }
-    .cs_logo{
-        margin-bottom: 20px;
-    }
-    /*.btn{*/
-    /*    display: flex;*/
-    /*}*/
-    /*.btn-primary{*/
-    /*    align-items: center;*/
-    /*    text-align: center;*/
-    /*}*/
-    .font1,font2{
-        font-family: HY견고딕;
-    }
-    .font2{
-        color:dimgray;
-
-
-    }
-    .logo{
-        margin:0;
-    }
-    .col-5{
-        padding:0;
-    }
-    .col-7{
-        padding:0;
-    }
-    .a{
-        height: 130px ; display: table-cell; vertical-align: middle;
-    }
-
-
-
-
-
-</style>
-
-
 <!-- Custom styles for this template -->
 <link href="css/login.css" rel="stylesheet">
 </head>
-<body class="text-center bg-secondary">
+<body class="text-center bg-light ">
 <%--<div class="d-flex align-items-center">--%>
-    <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="w-100 d-block py-5 m-auto" tabindex="-1">
         <div class="modal-dialog" role="document">
             <div class="modal-content shadow" style="border-radius: 30px;">
                 <div class="modal-header p-5 pb-4 border-bottom-0">
