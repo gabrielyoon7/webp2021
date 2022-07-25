@@ -14,7 +14,8 @@
 %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
     <%--    Bootstrap--%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -27,166 +28,194 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
     <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
     <script src='js/sha256.js'></script>
-    <style>
-        .my-2 {
-
-        }
-    </style>
 </head>
-<body>
-<div class="container">
-    <main>
-        <div class="row justify-content-md-center">
-            <div class="col-lg-8">
-                <div class="row">
-                    <a href="<%=main_url%>">
-                        <img src="<%=img_login_logo%>" class="img-fluid col-12">
-                    </a>
-                    <a href="#" class="btn btn-primary my-2 col-6" onclick="registerInit()">경기인 회원가입</a>
-                    <a href="#" class="btn btn-primary my-2 col-6" onclick="registerReset()">외부인 회원가입</a>
+<body class="bg-light ">
+<div class="">
+    <div class="w-100 d-block py-5 m-auto" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content shadow" style="border-radius: 30px;">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <!-- <h5 class="modal-title">Modal title</h5> -->
+                    <h2 class="fw-bold mb-0">회원가입</h2>
+                    <button type="button" class="btn-close" onclick="window.location.href='main.kgu';"></button>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-md-center" id="registerReset"><!--class="row g-5"-->
-            <div class="col-lg-8">
-                <h4 class="mb-3">회원 가입</h4>
-                <div class="needs-validation" novalidate>
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label for="id" class="form-label">학번(교번)</label><span id="warningID"></span>
-                            <div class="row align-items-md-stretch">
-                                <div class="col-10">
-                                    <input type="text" class="form-control" id="id" placeholder="학번이나 교번을 입력해주세요."
-                                           value="" required>
+
+                <div class="modal-body p-5 pt-0">
+                    <div class="row justify-content-md-center">
+                        <div class="text-center">
+                                <div class="my-5">
+                                    <div class="my-2">
+                                        <img class="img-fluid w-50" onclick="window.location.href='main.kgu';"
+                                             src="/img/logo/kgu_logo(500x300).png"/>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold ">경기대학교 SWAIG</h4>
+                                    </div>
                                 </div>
-                                <div class="col-2 text-end">
-                                    <button class="btn float-right btn-primary" onclick="checkID()">중복확인</button>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="#" class="btn btn-outline-primary" onclick="registerInit()">경기인 회원가입</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="btn btn-outline-primary" onclick="registerReset()">외부인 회원가입</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="invalid-feedback">
-                                학번을 입력해 주세요.
-                            </div>
                         </div>
+                    </div>
+                    <hr class="my-5"/>
+                    <div class="row justify-content-md-center" id="registerReset"><!--class="row g-5"-->
+                        <h4 class="mb-3">회원가입(경기인)</h4>
+                        <div class="">
+                            <div class="needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <div class="">
+                                            <label for="id" class="form-label">학번(교번)</label><span id="warningID"></span>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="id"
+                                                       placeholder="학번이나 교번을 입력해주세요."
+                                                       value="" required>
+                                                <button class="btn btn-outline-primary" onclick="checkID()">중복확인
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            학번을 입력해 주세요.
+                                        </div>
+                                    </div>
 
-                        <div class="col-12">
-                            <label for="pwd"
-                                   class="form-label">비밀번호<span> (가능한 특수문자: !,@,#,$,%,^,&,*,(,) )</span></label>
-                            <div class="input-group has-validation">
-                                <input type="password" class="form-control" id="pwd" placeholder="8 글자 이상으로 해주세요."
-                                       required>
-                                <div class="invalid-feedback">
-                                    비밀번호를 입력해주세요
+                                    <div class="col-12">
+                                        <label for="pwd"
+                                               class="form-label">비밀번호<span> (가능한 특수문자: !,@,#,$,%,^,&,*,(,) )</span></label>
+                                        <div class="input-group has-validation">
+                                            <input type="password" class="form-control" id="pwd"
+                                                   placeholder="8 글자 이상으로 해주세요."
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                비밀번호를 입력해주세요
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="pwdCheck" class="form-label">비밀번호 확인</label><span
+                                            id="warningPwd"></span>
+                                        <div class="input-group has-validation">
+                                            <input type="password" class="form-control" id="pwdCheck"
+                                                   onkeyup="checkPassword()"
+                                                   placeholder="똑같이 입력해주세요." required>
+                                            <div class="invalid-feedback">
+                                                비밀번호를 확인해 주세요.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="name" class="form-label">이름</label>
+                                        <input type="email" class="form-control" id="name" placeholder="이름을 입력해주세요">
+                                        <div class="invalid-feedback">
+                                            이름을 입력해주세요
+                                        </div>
+                                    </div>
+                                    <%--<h4 class="mb-3">성별</h4> --%>
+
+                                    <div class="my-3">
+                                        <label for="gender" class="form-label">성별</label>
+                                        <div id="gender">
+                                            <div class="form-check">
+                                                <input id="male" name="gender" type="radio" class="form-check-input"
+                                                       value="남"
+                                                       checked required>
+                                                <label class="form-check-label" for="male">남</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input id="female" name="gender" type="radio" class="form-check-input"
+                                                       value="여"
+                                                       required>
+                                                <label class="form-check-label" for="female">여</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="birth">생년월일<span> (비밀번호 초기시 생년월일로 초기화됩니다.)</span></label>
+                                        <div class="form-floating mb-3">
+                                            <input type="date" class="form-control" id="birth" placeholder="date">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요.">
+                                        <div class="invalid-feedback">
+                                            이메일을 입력해주세요.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label">전화번호</label>
+                                        <input type="text" class="form-control" id="phone" placeholder="-포함해서 적어주세요."
+                                               required>
+                                        <div class="invalid-feedback">
+                                            전화번호를 입력해주세요.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <label for="hope_type"
+                                               class="form-label">희망구분<span> (관리자 승인후 변경됩니다.)</span></label>
+                                        <select class="form-select" id="hope_type" required></select>
+                                        <div class="invalid-feedback">
+                                            희망구분을 선택해 주세요.
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="major" class="form-label">학과</label>
+                                        <select class="form-select" id="major" required></select>
+                                        <div class="invalid-feedback">
+                                            학과를 선택해 주세요
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <label for="pwdCheck" class="form-label">비밀번호 확인</label><span id="warningPwd"></span>
-                            <div class="input-group has-validation">
-                                <input type="password" class="form-control" id="pwdCheck" onkeyup="checkPassword()"
-                                       placeholder="똑같이 입력해주세요." required>
-                                <div class="invalid-feedback">
-                                    비밀번호를 확인해 주세요.
+                                <hr class="my-4">
+                                <div class="w-100 btn btn-primary btn-lg" type="submit" onclick="LetsRegisterBig()">
+                                    가입하기
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="name" class="form-label">이름</label>
-                            <input type="email" class="form-control" id="name" placeholder="이름을 입력해주세요">
-                            <div class="invalid-feedback">
-                                이름을 입력해주세요
-                            </div>
-                        </div>
-                        <%--<h4 class="mb-3">성별</h4> --%>
-
-                        <div class="my-3">
-                            <label for="gender" class="form-label">성별</label>
-                            <div id="gender">
-                                <div class="form-check">
-                                    <input id="male" name="gender" type="radio" class="form-check-input" value="남"
-                                           checked required>
-                                    <label class="form-check-label" for="male">남</label>
-                                </div>
-                                <div class="form-check">
-                                    <input id="female" name="gender" type="radio" class="form-check-input" value="여"
-                                           required>
-                                    <label class="form-check-label" for="female">여</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <label for="birth">생년월일<span> (비밀번호 초기시 생년월일로 초기화됩니다.)</span></label>
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="birth" placeholder="date">
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요.">
-                            <div class="invalid-feedback">
-                                이메일을 입력해주세요.
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="phone" class="form-label">전화번호</label>
-                            <input type="text" class="form-control" id="phone" placeholder="-포함해서 적어주세요." required>
-                            <div class="invalid-feedback">
-                                전화번호를 입력해주세요.
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <label for="hope_type" class="form-label">희망구분<span> (관리자 승인후 변경됩니다.)</span></label>
-                            <select class="form-select" id="hope_type" required></select>
-                            <div class="invalid-feedback">
-                                희망구분을 선택해 주세요.
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="major" class="form-label">학과</label>
-                            <select class="form-select" id="major" required></select>
-                            <div class="invalid-feedback">
-                                학과를 선택해 주세요
                             </div>
                         </div>
                     </div>
-                    <hr class="my-4">
-                    <div class="w-100 btn btn-primary btn-lg" type="submit" onclick="LetsRegisterBig()">가입하기</div>
                 </div>
+
             </div>
         </div>
-    </main>
+    </div>
 </div>
 <br>
 </body>
 </html>
 <script>
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         makeTypeList();
         makeMajorList();
     })
 
-    function makeMajorList(){
+    function makeMajorList() {
         var major = $('#major');
-        var majorList=<%=getAllMajor%>;
+        var majorList =<%=getAllMajor%>;
         var text = '';
-        for(var i=0;i<majorList.length;i++){
-            text+='<option>'+majorList[i].major_name+'</option>';
+        for (var i = 0; i < majorList.length; i++) {
+            text += '<option>' + majorList[i].major_name + '</option>';
         }
-        text+='<option>기타</option>';
+        text += '<option>기타</option>';
         major.append(text);
     }
 
-    function makeTypeList(){
+    function makeTypeList() {
         var type = $('#hope_type');
-        var typeList=<%=getAllType%>;
+        var typeList =<%=getAllType%>;
         var text = '';
-        for(var i=0;i<typeList.length;i++){
-            text+='<option>'+typeList[i].type_name+'</option>';
+        for (var i = 0; i < typeList.length; i++) {
+            text += '<option>' + typeList[i].type_name + '</option>';
         }
         type.append(text);
     }
@@ -364,7 +393,7 @@
         var list = $('#registerReset');
         var text = '';
         text += '<div class="row justify-content-md-center"  id="registerReset">'
-            + '<div class="col-lg-8" > <h4 class="mb-3">회원 가입</h4>'
+            + '<div class="" > <h4 class="mb-3">외부인</h4>'
             + '<div class="needs-validation" novalidate> <div class="row g-3">'
             + '<div class="">'
             + '<label for="id" class="form-label">아이디</label><span id="warningID"></span>'
