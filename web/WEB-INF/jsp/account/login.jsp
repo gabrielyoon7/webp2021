@@ -100,58 +100,67 @@
 <!-- Custom styles for this template -->
 <link href="css/login.css" rel="stylesheet">
 </head>
-<body class="text-center">
+<body class="text-center bg-secondary">
+<%--<div class="d-flex align-items-center">--%>
+    <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content shadow" style="border-radius: 30px;">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <!-- <h5 class="modal-title">Modal title</h5> -->
+                    <h2 class="fw-bold mb-0">로그인</h2>
+                    <button type="button" class="btn-close" onclick="history.back()"></button>
+                </div>
 
-<main class="form-signin">
-    <form method="POST" action="login.kgu" id="login_form">
+                <div class="modal-body p-5 pt-0">
+                    <form method="POST" action="login.kgu" id="login_form">
 
-        <div class="row py-5">
-            <div class="col-5">
-                <img class="img-fluid" onclick="window.location.href='main.kgu';" src="/img/logo/kgu_logo(500x300).png"/>
-            </div>
-            <div class="col-7">
-                <div class="py-2">
-                    <div class = "font1">
-                        <a class="text-decoration-none" href="main.kgu"><p class="h2 logo text-dark"><strong>경기대학교</strong></p></a>
-                    </div>
-                    <div class = "font2">
-                        <a class="text-decoration-none" href="main.kgu"><p class="h5 text-dark"><strong id="majorTitle"></strong></p></a>
-                    </div>
+                        <%--                    <div class="row py-5">--%>
+                        <%--                        <div class="col-5">--%>
+                        <%--                            <img class="img-fluid" onclick="window.location.href='main.kgu';" src="/img/logo/kgu_logo(500x300).png"/>--%>
+                        <%--                        </div>--%>
+                        <%--                        <div class="col-7">--%>
+                        <%--                            <div class="py-2">--%>
+                        <%--                                <div class = "font1">--%>
+                        <%--                                    <a class="text-decoration-none" href="main.kgu"><p class="h2 logo text-dark"><strong>경기대학교</strong></p></a>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class = "font2">--%>
+                        <%--                                    <a class="text-decoration-none" href="main.kgu"><p class="h5 text-dark"><strong id="majorTitle"></strong></p></a>--%>
+                        <%--                                </div>--%>
+                        <%--                            </div>--%>
+                        <%--                        </div>--%>
+                        <%--                    </div>--%>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="id" id="id" placeholder="아이디를 입력하세요">
+                            <label for="id">아이디</label>
+                            <input type="submit" onclick="letsSubmit()" style="display:none">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력하세요">
+                            <label for="password">비밀번호</label>
+                            <input type="hidden" name="password_hash" id="password_hash" class="iText" value="VALUE_NOT_EMPTY">
+                        </div>
+
+                        <div class="checkbox mb-3">
+                            <label>
+                                <p>
+                                    <span id="wrong_password">초기 비밀번호는 생년월일(6자리)입니다.</span>
+                                </p>
+                                <a href="register.kgu">
+                                    <div>아직 회원가입을 안하셨나요?</div>
+                                </a>
+                            </label>
+                        </div>
+                        <div style="width: 100%">
+                            <a href="#" class="w-100 btn btn-lg btn-primary text-center" onclick="letsSubmit()" style = "text-decoration: none;">로그인</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-
-        <h1 class="h3 mb-3 fw-normal">로그인</h1>
-
-        <div class="form-floating">
-            <input type="text" class="form-control" name="id" id="id" placeholder="아이디를 입력하세요">
-            <label for="id">아이디</label>
-            <input type="submit" onclick="letsSubmit()" style="display:none">
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력하세요">
-            <label for="password">비밀번호</label>
-            <input type="hidden" name="password_hash" id="password_hash" class="iText" value="VALUE_NOT_EMPTY">
-        </div>
-
-        <div class="checkbox mb-3">
-            <label>
-                <p>
-                    <span id="wrong_password">초기 비밀번호는 생년월일(6자리)입니다.</span>
-                </p>
-                <a href="register.kgu">
-                    <div>아직 회원가입을 안하셨나요?</div>
-                </a>
-            </label>
-        </div>
-        <div style="width: 100%">
-            <a href="#" class="w-100 btn btn-lg btn-primary text-center" onclick="letsSubmit()" style = "text-decoration: none;">로그인</a>
-        </div>
-    </form>
-</main>
-
-
+<%--</div>--%>
 
 </body>
 
