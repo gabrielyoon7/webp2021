@@ -138,8 +138,8 @@
         <hr>
         <div class="row align-items-md-stretch py-4">
             <p class="col-md-4 h3"><a href="main.kgu">메 인</a></p>
-            <p class="col-md-4 h3"><a href="loginPage_v2.kgu">로그인(Google)</a></p>
-            <p class="col-md-4 h3"><a href="loginPage.kgu" class="text-secondary">로그인(구버전)</a></p>
+            <p class="col-md-4 h3"><a class="text-secondary">로그인(Google)</a></p>
+            <p class="col-md-4 h3"><a href="loginPage.kgu">로그인</a></p>
         </div>
         <div class="row align-items-md-stretch py-4">
             <p class="col-md-4 h3"><a href="https://sites.google.com/kyonggi.ac.kr/k-with">K-WITH 융합교육원</a></p>
