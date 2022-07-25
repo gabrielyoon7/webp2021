@@ -52,14 +52,16 @@
                                         <h4 class="fw-bold ">경기대학교 SWAIG</h4>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#" class="btn btn-outline-primary" onclick="registerInit()">경기인 회원가입</a>
+                            <hr class="my-5"/>
+                                <div class="d-flex justify-content-center">
+                                    <div class="">
+                                        <a href="#" class="p-4 mx-1 btn btn-outline-primary" onclick="registerInit()">경기인</a>
                                     </div>
-                                    <div class="col">
-                                        <a href="#" class="btn btn-outline-primary" onclick="registerReset()">외부인 회원가입</a>
+                                    <div class="">
+                                        <a href="#" class="p-4 mx-1 btn btn-outline-primary" onclick="registerReset()">외부인</a>
                                     </div>
                                 </div>
+                            <p>유형을 선택하세요.</p>
                         </div>
                     </div>
                     <hr class="my-5"/>
