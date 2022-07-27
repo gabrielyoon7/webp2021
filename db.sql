@@ -21,9 +21,9 @@ CREATE TABLE menu_tabs(
     `orderNum` INT(10) NOT NULL, PRIMARY KEY(`tab_id`)
 );
 INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('1', 'SWAIG 소개', '4', 'info-circle-fill', 'information.kgu', '1');
-INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('2', 'SWAIG 알림', '4', 'bootstrap-fill', 'bbs.kgu', '2');
+INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('2', 'SWAIG 교과목', '4', 'bootstrap-fill', 'bbs.kgu', '2');
 INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('3', '신청하기', '4', 'check-circle-fill', 'bbs.kgu', '3');
-INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('4', '전공보기', '4', 'pencil-fill', '#', '4');
+INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('4', 'SWAIG 융합전공', '4', 'pencil-fill', '#', '4');
 INSERT INTO menu_tabs(tab_id, tab_title, tab_level, tab_img, tab_url, orderNum) VALUES('5', '세부전공', '4', 'bookmark-star-fill', 'information.kgu', '5');
 
 
@@ -36,22 +36,22 @@ CREATE TABLE menu_pages(
 	  PRIMARY KEY(`page_id`)
 );
 
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('10', '1', '0', 'information.kgu', 'SWAIG소개');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('11', '1', '1', 'contact.kgu', '위치 및 연락처');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('10', '1', '0', 'information.kgu', 'SWAIG 개요소개');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('11', '1', '1', 'bbs.kgu', 'SWAIG 공지');
 
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', '전체공지');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('21', '2', '1', 'bbs.kgu', 'SWAIG 공지');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('22', '2', '2', 'bbs.kgu', '수업공지');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'bbs.kgu', '취업공지');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', 'SWAIG 교과목리스트');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('21', '2', '1', 'bbs.kgu', 'SWAIG 교과목 개요');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('22', '2', '2', 'bbs.kgu', 'SWAIG 교과목 개설현황');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'bbs.kgu', '나노디그리');
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('30', '3', '0', 'reg.kgu', '신청하기');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('31', '3', '1', 'bbs.kgu', '학과자료실');
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('50', '5', '0', 'information.kgu', '전공소개');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('51', '5', '1', 'curriculum.kgu', '교육과정');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('52', '5', '2', 'professor.kgu', '교수진');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('53', '5', '3', 'bbs.kgu', '전공게시판');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('54', '5', '4', 'bbs.kgu', '자유게시판');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('51', '5', '1', 'professor.kgu', '교수소개');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('52', '5', '2', 'bbs.kgu', '수업공지');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('53', '5', '3', 'bbs.kgu', '전공자료실');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('54', '5', '4', 'bbs.kgu', '취업/공모전공지');
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('60', '6', '0', 'mypage.kgu', '마이페이지');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('61', '6', '1', 'whatIDoPage.kgu', '활동내역');
@@ -354,7 +354,7 @@ CREATE TABLE log(
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE bbs_reg_answer(
+CREATE TABLE bbs_reg_answer(nodeproject
 
     `id` INT Auto_Increment,
     `reg_id` INT(10) NOT NULL,
