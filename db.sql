@@ -39,10 +39,13 @@ CREATE TABLE menu_pages(
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('10', '1', '0', 'information.kgu', 'SWAIG 개요소개');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('11', '1', '1', 'bbs.kgu', 'SWAIG 공지');
 
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', 'SWAIG 교과목리스트');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', 'SWAIG 교과목 리스트');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('21', '2', '1', 'bbs.kgu', 'SWAIG 교과목 개요');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('22', '2', '2', 'bbs.kgu', 'SWAIG 교과목 개설현황');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'bbs.kgu', '나노디그리');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('22', '2', '2', 'curriculum.kgu', 'SWAIG 교과목 개설현황');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'information.kgu', '나노디그리소개');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('24', '2', '4', 'information.kgu', '나노디그리 신청방법');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('25', '2', '5', 'information.kgu', '나노디그리 이수조건');
+
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('30', '3', '0', 'reg.kgu', '신청하기');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('31', '3', '1', 'bbs.kgu', '학과자료실');
@@ -354,7 +357,7 @@ CREATE TABLE log(
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE bbs_reg_answer(nodeproject
+CREATE TABLE bbs_reg_answer(
 
     `id` INT Auto_Increment,
     `reg_id` INT(10) NOT NULL,
