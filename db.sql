@@ -42,7 +42,7 @@ INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('11',
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', 'SWAIG 교과목 리스트');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('21', '2', '1', 'bbs.kgu', 'SWAIG 교과목 개요');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('22', '2', '2', 'curriculum.kgu', 'SWAIG 교과목 개설현황');
-INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'information.kgu', '나노디그리소개');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('23', '2', '3', 'information.kgu', '나노디그리 소개');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('24', '2', '4', 'information.kgu', '나노디그리 신청방법');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('25', '2', '5', 'information.kgu', '나노디그리 이수조건');
 
