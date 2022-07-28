@@ -283,7 +283,7 @@
     function makeNoticeReg() {
         var nav12 = $('#nav-12');
         var nav31 = $('#nav-31');
-        <%--var registerAllInfo = <%=registerAllInfo%>;--%>
+        var registerAllInfo = <%=registerAllInfo%>;
         var bbs31 =<%=bbs31%>;
         var bbs12 =<%=bbs12%>;
         var type = <%=type%>;
