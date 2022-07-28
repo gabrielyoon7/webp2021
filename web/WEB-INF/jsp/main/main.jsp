@@ -39,6 +39,7 @@
     String bbs21 = (String) request.getAttribute("bbs21");
     String bbs22 = (String) request.getAttribute("bbs22");
     String bbs23 = (String) request.getAttribute("bbs23");
+    String bbs12 = (String) request.getAttribute("bbs12");
     String bbs31 = (String) request.getAttribute("bbs31");
     String registerAllInfo = (String) request.getAttribute("registerAllInfo");
 %>
@@ -152,15 +153,15 @@
                                         <div>
                                             <div class="mb-2 d-flex justify-content-between border-bottom">
                                                 <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-                                                    <button class="nav-link active" id="nav-30-tab"
-                                                            data-bs-toggle="tab" data-bs-target="#nav-30"
-                                                            type="button" role="tab" aria-controls="nav-home"
-                                                            aria-selected="true"
-                                                            onclick="clickNoticeReg('more_link2', 30)"></button>
-                                                    <button class="nav-link" id="nav-31-tab" data-bs-toggle="tab"
+                                                    <button class="nav-link active" id="nav-31-tab" data-bs-toggle="tab"
                                                             data-bs-target="#nav-31" type="button" role="tab"
-                                                            aria-controls="nav-profile" aria-selected="false"
+                                                            aria-controls="nav-home" aria-selected="true"
                                                             onclick="clickBBS('more_link2', 31)"></button>
+                                                    <button class="nav-link" id="nav-12-tab"
+                                                            data-bs-toggle="tab" data-bs-target="#nav-12"
+                                                            type="button" role="tab" aria-controls="nav-profile"
+                                                            aria-selected="false"
+                                                            onclick="clickBBS('more_link2', 12)"></button>
                                                 </div>
                                                 <div class="morebtn">
                                                     <div class="py-2">
@@ -170,10 +171,10 @@
                                             </div>
                                         </div>
                                         <div class="tab-content" id="nav-tabContent2">
-                                            <div class="tab-pane fade show active" id="nav-30" role="tabpanel"
-                                                 aria-labelledby="nav-30-tab"></div>
-                                            <div class="tab-pane fade" id="nav-31" role="tabpanel"
+                                            <div class="tab-pane fade show active" id="nav-31" role="tabpanel"
                                                  aria-labelledby="nav-31-tab"></div>
+                                            <div class="tab-pane fade" id="nav-12" role="tabpanel"
+                                                 aria-labelledby="nav-12-tab"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -280,35 +281,50 @@
     }
 
     function makeNoticeReg() {
-        var nav30 = $('#nav-30');
+        var nav12 = $('#nav-12');
         var nav31 = $('#nav-31');
         var registerAllInfo = <%=registerAllInfo%>;
         var bbs31 =<%=bbs31%>;
+        var bbs12 =<%=bbs12%>;
         var type = <%=type%>;
 
-        var text30 = '<ul class="list-group">';
-        if (registerAllInfo != null) {
-            for (var i = 0; i < registerAllInfo.length; i++) {
+        var text12 = '<ul class="list-group">';
+        // if (registerAllInfo != null) {
+        //     for (var i = 0; i < registerAllInfo.length; i++) {
+        //         if (i == 9) {
+        //             break;
+        //         }
+        //         var url12 = '';
+        //         url12 = 'reg.kgu?major=main&num=30&mode=view&id=' + registerAllInfo[i].id;
+        //         if (type.for_header=='기타'){
+        //             text12 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+        //                 + '<span class="index_post_link">' + registerAllInfo[i].title + '</span>'
+        //                 + '<span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span>'
+        //                 + '</li>';
+        //         }
+        //         else {
+        //             text12 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+        //                 + '<a href="' + url12 + '"><span class="index_post_link">' + registerAllInfo[i].title + '</span></a>'
+        //                 + '<a href="' + url12 + '"><span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span></a>'
+        //                 + '</li>';                }
+        //     }
+        //     text12 += '</ul>';
+        // }
+        var text12 = '<ul class="list-group">';
+        if (bbs12 != null) {
+            for (var i = 0; i < bbs12.length; i++) {
                 if (i == 9) {
                     break;
                 }
-                var url30 = '';
-                url30 = 'reg.kgu?major=main&num=30&mode=view&id=' + registerAllInfo[i].id;
-                if (type.for_header=='기타'){
-                    text30 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                        + '<span class="index_post_link">' + registerAllInfo[i].title + '</span>'
-                        + '<span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span>'
-                        + '</li>';
-                }
-                else {
-                    text30 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                        + '<a href="' + url30 + '"><span class="index_post_link">' + registerAllInfo[i].title + '</span></a>'
-                        + '<a href="' + url30 + '"><span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span></a>'
-                        + '</li>';                }
+                var url12 = 'bbs.kgu?major=main&num=12&mode=view&id=' + bbs12[i].id;
+                text12 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+                    + '<a href="' + url12 + '"><span class="index_post_link">' + bbs12[i].title + '</span></a>'
+                    + '<a href="' + url12 + '"><span class="index_post_time">' + formatDate(bbs12[i].last_modified) + '</span></a>'
+                    + '</li>';
             }
-            text30 += '</ul>';
+            text12 += '</ul>';
         }
-        nav30.append(text30);
+        nav12.append(text12);
 
         var text31 = '<ul class="list-group">';
         if (bbs31 != null) {
@@ -327,11 +343,11 @@
         nav31.append(text31);
 
         var menuPageList = <%=menuPageList%>;
-        var nav30tab = $('#nav-30-tab');
+        var nav12tab = $('#nav-12-tab');
         var nav31tab = $('#nav-31-tab');
         for (var i = 0; i < menuPageList.length; i++) {
-            if (menuPageList[i].page_id == '30') {
-                nav30tab.append('<strong>' + menuPageList[i].page_title + '</strong>');
+            if (menuPageList[i].page_id == '12') {
+                nav12tab.append('<strong>' + menuPageList[i].page_title + '</strong>');
             }
             if (menuPageList[i].page_id == '31') {
                 nav31tab.append('<strong>' + menuPageList[i].page_title + '</strong>');

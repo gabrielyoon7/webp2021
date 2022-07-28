@@ -38,6 +38,7 @@ CREATE TABLE menu_pages(
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('10', '1', '0', 'information.kgu', 'SWAIG 개요소개');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('11', '1', '1', 'bbs.kgu', 'SWAIG 공지');
+INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('12', '1', '2', 'bbs.kgu', 'SWAIG 취업공지');
 
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('20', '2', '0', 'bbs.kgu', 'SWAIG 교과목 리스트');
 INSERT INTO menu_pages(page_id,tab_id,orderNum,page_path,page_title) VALUE('21', '2', '1', 'bbs.kgu', 'SWAIG 교과목 개요');
