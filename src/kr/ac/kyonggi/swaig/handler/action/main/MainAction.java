@@ -28,7 +28,7 @@ public class MainAction extends CustomAction {
         String num=request.getParameter("num");
         request.setAttribute("scheduleAllInfo", gson.toJson(AdminDAO.getInstance().getSchedule()));
         request.setAttribute("slider", gson.toJson(AdminDAO.getInstance().getSlider()));
-        request.setAttribute("bbs21", gson.toJson(BBSDAO.getInstance().getBBSList("21")));
+        request.setAttribute("bbs11", gson.toJson(BBSDAO.getInstance().getBBSList("11")));
         request.setAttribute("bbs22", gson.toJson(BBSDAO.getInstance().getBBSList("22")));
         request.setAttribute("bbs23", gson.toJson(BBSDAO.getInstance().getBBSList("23")));
 

@@ -36,7 +36,7 @@
     String scheduleAllInfo = (String) request.getAttribute("scheduleAllInfo");
     String slider = (String) request.getAttribute("slider");
     String favorite_menu = (String) request.getAttribute("favorite_menu");
-    String bbs21 = (String) request.getAttribute("bbs21");
+    String bbs11 = (String) request.getAttribute("bbs11");
     String bbs22 = (String) request.getAttribute("bbs22");
     String bbs23 = (String) request.getAttribute("bbs23");
     String bbs12 = (String) request.getAttribute("bbs12");
@@ -115,11 +115,11 @@
                                         <div class="">
                                             <div class="mb-2 d-flex justify-content-between border-bottom">
                                                 <div class="nav nav-tabs " id="nav-tab" role="tablist">
-                                                    <button class="nav-link active" id="nav-21-tab"
-                                                            data-bs-toggle="tab" data-bs-target="#nav-21"
+                                                    <button class="nav-link active" id="nav-11-tab"
+                                                            data-bs-toggle="tab" data-bs-target="#nav-11"
                                                             type="button" role="tab" aria-controls="nav-home"
                                                             aria-selected="true"
-                                                            onclick="clickBBS('more_link1', 21)"></button>
+                                                            onclick="clickBBS('more_link1', 11)"></button>
                                                     <button class="nav-link" id="nav-22-tab" data-bs-toggle="tab"
                                                             data-bs-target="#nav-22" type="button" role="tab"
                                                             aria-controls="nav-profile" aria-selected="false"
@@ -131,14 +131,14 @@
                                                 </div>
                                                 <div class="morebtn">
                                                     <div class="py-2">
-                                                        <a id="more_link1" href="bbs.kgu?major=main&num=21" data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                                        <a id="more_link1" href="bbs.kgu?major=main&num=11" data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i class="bi bi-plus-lg"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-content" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="nav-21" role="tabpanel"
-                                                 aria-labelledby="nav-21-tab"></div>
+                                            <div class="tab-pane fade show active" id="nav-11" role="tabpanel"
+                                                 aria-labelledby="nav-11-tab"></div>
                                             <div class="tab-pane fade" id="nav-22" role="tabpanel"
                                                  aria-labelledby="nav-22-tab"></div>
                                             <div class="tab-pane fade" id="nav-23" role="tabpanel"
@@ -283,7 +283,7 @@
     function makeNoticeReg() {
         var nav12 = $('#nav-12');
         var nav31 = $('#nav-31');
-        <%--var registerAllInfo = <%=registerAllInfo%>;--%>
+        var registerAllInfo = <%=registerAllInfo%>;
         var bbs31 =<%=bbs31%>;
         var bbs12 =<%=bbs12%>;
         var type = <%=type%>;
@@ -366,23 +366,23 @@
     }
 
     function makeNoticeBBS() {
-        var bbs21 =<%=bbs21%>;
-        if (bbs21 != null) {
-            var notice21 = $('#nav-21');
-            var text21 = '<ul class="list-group">';
-            for (var i = 0; i < bbs21.length; i++) {
+        var bbs11 =<%=bbs11%>;
+        if (bbs11 != null) {
+            var notice11 = $('#nav-11');
+            var text11 = '<ul class="list-group">';
+            for (var i = 0; i < bbs11.length; i++) {
                 if (i == 9) {
                     break;
                 }
-                var url21 = 'bbs.kgu?major=main&num=21&mode=view&id=' + bbs21[i].id;
-                text21 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                    + '<a href="' + url21 + '"><span class="index_post_link">' + bbs21[i].title + '</span></a>'
-                    + '<a href="' + url21 + '"><span class="index_post_time">' + formatDate(bbs21[i].last_modified) + '</span></a>'
+                var url11 = 'bbs.kgu?major=main&num=11&mode=view&id=' + bbs11[i].id;
+                text11 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+                    + '<a href="' + url11 + '"><span class="index_post_link">' + bbs11[i].title + '</span></a>'
+                    + '<a href="' + url11 + '"><span class="index_post_time">' + formatDate(bbs11[i].last_modified) + '</span></a>'
                     + '</li>';
 
             }
-            text21 += '</ul>';
-            notice21.append(text21);
+            text11 += '</ul>';
+            notice11.append(text11);
         }
         var bbs22 =<%=bbs22%>;
         if (bbs22 != null) {
@@ -420,18 +420,18 @@
         }
 
         var menuPageList = <%=menuPageList%>;
-        var nav21tab = $('#nav-21-tab');
+        var nav11tab = $('#nav-11-tab');
         var nav22tab = $('#nav-22-tab');
         var nav23tab = $('#nav-23-tab');
-        var tab_name_21 = '';
+        var tab_name_11 = '';
         var tab_name_22 = '';
         var tab_name_23 = '';
 
         if (menuPageList != null) {
             for (var i = 0; i < menuPageList.length; i++) {
-                if (menuPageList[i].page_id == '21') {
-                    tab_name_21 = menuPageList[i].page_title;
-                    nav21tab.append('<strong>' + tab_name_21 + '</strong>');
+                if (menuPageList[i].page_id == '11') {
+                    tab_name_11 = menuPageList[i].page_title;
+                    nav11tab.append('<strong>' + tab_name_11 + '</strong>');
                 }
                 if (menuPageList[i].page_id == '22') {
                     tab_name_22 = menuPageList[i].page_title;
