@@ -8,6 +8,7 @@ import kr.ac.kyonggi.swaig.handler.dao.settings.BBSDAO;
 import kr.ac.kyonggi.swaig.handler.dao.settings.HomeDAO;
 import kr.ac.kyonggi.swaig.handler.dao.settings.RegisterDAO;
 import kr.ac.kyonggi.swaig.handler.dao.tutorial.TutorialDAO;
+import kr.ac.kyonggi.swaig.handler.dto.user.UserDTO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +22,7 @@ public class MainAction extends CustomAction {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         super.execute(request,response);
         Gson gson = new Gson();
+        UserDTO user = gson.fromJson((String) request.getSession().getAttribute("user"), UserDTO.class);
         String major=request.getParameter("major");
         if(major==null){
             major="main";
@@ -29,8 +31,14 @@ public class MainAction extends CustomAction {
         request.setAttribute("scheduleAllInfo", gson.toJson(AdminDAO.getInstance().getSchedule()));
         request.setAttribute("slider", gson.toJson(AdminDAO.getInstance().getSlider()));
         request.setAttribute("bbs11", gson.toJson(BBSDAO.getInstance().getBBSList("11")));
-        request.setAttribute("bbs22", gson.toJson(BBSDAO.getInstance().getBBSList("22")));
-        request.setAttribute("bbs23", gson.toJson(BBSDAO.getInstance().getBBSList("23")));
+//        request.setAttribute("bbs52", gson.toJson(BBSDAO.getInstance().getBBSList("52")));
+        if (user != null && user.sub_major != "-"){
+            request.setAttribute("bbs52", gson.toJson(BBSDAO.getInstance().getMajorBBSList(user.sub_major.split("-/-/-")[0], "52")));
+            request.setAttribute("bbs54", gson.toJson(BBSDAO.getInstance().getMajorBBSList(user.sub_major.split("-/-/-")[0], "54")));
+        }
+//        BBSDAO.getInstance().getMajorBBSList(user.sub_major.split("<br>")[0], num)
+//        request.setAttribute("bbs23", gson.toJson(BBSDAO.getInstance().getBBSList("23")));
+        request.setAttribute("getAllMajor", gson.toJson(HomeDAO.getInstance().getAllMajor()));
 
         request.setAttribute("bbs12", gson.toJson(BBSDAO.getInstance().getBBSList("12")));
         request.setAttribute("bbs31", gson.toJson(BBSDAO.getInstance().getBBSList("31")));

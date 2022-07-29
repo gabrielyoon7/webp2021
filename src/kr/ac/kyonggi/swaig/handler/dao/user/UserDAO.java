@@ -358,10 +358,11 @@ public class UserDAO {
                 queryRunner.update(conn,"UPDATE user SET sub_major=? WHERE id = ?;",black, arr[0]);
             } else {
                 for (int i = 0; i < sub_id.length; i++) {
-                    listOfMaps = queryRunner.query(conn, "SELECT major_name FROM major WHERE oid = ?;", new MapListHandler(), sub_id[i]);
+                    listOfMaps = queryRunner.query(conn, "SELECT major_id FROM major WHERE oid = ?;", new MapListHandler(), sub_id[i]);
                     ArrayList<MajorDTO> results = gson.fromJson(gson.toJson(listOfMaps), new TypeToken<List<MajorDTO>>() {
                     }.getType());
-                    sub_major += results.get(0).major_name+"<br>";
+                    sub_major += results.get(0).major_id+"-/-/-";
+//                    sub_major += sub_id[i]+"-/-/-";
                 }
                 queryRunner.update(conn, "UPDATE user SET sub_major=? WHERE id = ?;", sub_major, arr[0]);
             }

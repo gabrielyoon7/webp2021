@@ -37,10 +37,11 @@
     String slider = (String) request.getAttribute("slider");
     String favorite_menu = (String) request.getAttribute("favorite_menu");
     String bbs11 = (String) request.getAttribute("bbs11");
-    String bbs22 = (String) request.getAttribute("bbs22");
-    String bbs23 = (String) request.getAttribute("bbs23");
+    String bbs52 = (String) request.getAttribute("bbs52");
+    String bbs54 = (String) request.getAttribute("bbs54");
     String bbs12 = (String) request.getAttribute("bbs12");
     String bbs31 = (String) request.getAttribute("bbs31");
+    String getAllMajor = (String)request.getAttribute("getAllMajor");
     String registerAllInfo = (String) request.getAttribute("registerAllInfo");
 %>
 <!DOCTYPE html>
@@ -120,14 +121,14 @@
                                                             type="button" role="tab" aria-controls="nav-home"
                                                             aria-selected="true"
                                                             onclick="clickBBS('more_link1', 11)"></button>
-                                                    <button class="nav-link" id="nav-22-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-22" type="button" role="tab"
+                                                    <button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"
+                                                            data-bs-target="#nav-52" type="button" role="tab"
                                                             aria-controls="nav-profile" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 22)"></button>
-                                                    <button class="nav-link" id="nav-23-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-23" type="button" role="tab"
+                                                            onclick="clickBBS('more_link1', 52)"></button>
+                                                    <button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"
+                                                            data-bs-target="#nav-54" type="button" role="tab"
                                                             aria-controls="nav-contact" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 23)"></button>
+                                                            onclick="clickBBS('more_link1', 54)"></button>
                                                 </div>
                                                 <div class="morebtn">
                                                     <div class="py-2">
@@ -139,10 +140,10 @@
                                         <div class="tab-content" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="nav-11" role="tabpanel"
                                                  aria-labelledby="nav-11-tab"></div>
-                                            <div class="tab-pane fade" id="nav-22" role="tabpanel"
-                                                 aria-labelledby="nav-22-tab"></div>
-                                            <div class="tab-pane fade" id="nav-23" role="tabpanel"
-                                                 aria-labelledby="nav-23-tab"></div>
+                                            <div class="tab-pane fade" id="nav-52" role="tabpanel"
+                                                 aria-labelledby="nav-52-tab"></div>
+                                            <div class="tab-pane fade" id="nav-54" role="tabpanel"
+                                                 aria-labelledby="nav-54-tab"></div>
                                         </div>
 
                                     </div>
@@ -289,28 +290,6 @@
         var type = <%=type%>;
 
         var text12 = '<ul class="list-group">';
-        // if (registerAllInfo != null) {
-        //     for (var i = 0; i < registerAllInfo.length; i++) {
-        //         if (i == 9) {
-        //             break;
-        //         }
-        //         var url12 = '';
-        //         url12 = 'reg.kgu?major=main&num=30&mode=view&id=' + registerAllInfo[i].id;
-        //         if (type.for_header=='기타'){
-        //             text12 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-        //                 + '<span class="index_post_link">' + registerAllInfo[i].title + '</span>'
-        //                 + '<span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span>'
-        //                 + '</li>';
-        //         }
-        //         else {
-        //             text12 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-        //                 + '<a href="' + url12 + '"><span class="index_post_link">' + registerAllInfo[i].title + '</span></a>'
-        //                 + '<a href="' + url12 + '"><span class="index_post_time">' + formatDate(registerAllInfo[i].last_modified) + '</span></a>'
-        //                 + '</li>';                }
-        //     }
-        //     text12 += '</ul>';
-        // }
-        var text12 = '<ul class="list-group">';
         if (bbs12 != null) {
             for (var i = 0; i < bbs12.length; i++) {
                 if (i == 9) {
@@ -366,6 +345,7 @@
     }
 
     function makeNoticeBBS() {
+        const user = <%=user%>;
         var bbs11 =<%=bbs11%>;
         if (bbs11 != null) {
             var notice11 = $('#nav-11');
@@ -384,48 +364,49 @@
             text11 += '</ul>';
             notice11.append(text11);
         }
-        var bbs22 =<%=bbs22%>;
-        if (bbs22 != null) {
-            var notice22 = $('#nav-22');
-            var text22 = '<ul class="list-group">';
-            for (var i = 0; i < bbs22.length; i++) {
+        var bbs52 =<%=bbs52%>;
+        if (bbs52 != null) {
+            var notice52 = $('#nav-52');
+            var text52 = '<ul class="list-group">';
+            for (var i = 0; i < bbs52.length; i++) {
                 if (i == 9) {
                     break;
                 }
-                var url22 = 'bbs.kgu?major=main&num=22&mode=view&id=' + bbs22[i].id;
-                text22 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                    + '<a href="' + url22 + '"><span class="index_post_link">' + bbs22[i].title + '</span></a>'
-                    + '<a href="' + url22 + '"><span class="index_post_time">' + formatDate(bbs22[i].last_modified) + '</span></a>'
+                var url52 = 'bbs.kgu?major=main&num=52&mode=view&id=' + bbs52[i].id;
+                text52 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+                    + '<a href="' + url52 + '"><span class="index_post_link">' + bbs52[i].title + '</span></a>'
+                    + '<a href="' + url52 + '"><span class="index_post_time">' + formatDate(bbs52[i].last_modified) + '</span></a>'
                     + '</li>';
             }
-            text22 += '</ul>';
-            notice22.append(text22);
+            text52 += '</ul>';
+            notice52.append(text52);
         }
-        var bbs23 =<%=bbs23%>;
-        if (bbs23 != null) {
-            var notice23 = $('#nav-23');
-            var text23 = '<ul class="list-group">';
-            for (var i = 0; i < bbs23.length; i++) {
+        var bbs54 =<%=bbs54%>;
+        if (bbs54 != null) {
+            var notice54 = $('#nav-54');
+            var text54 = '<ul class="list-group">';
+            for (var i = 0; i < bbs54.length; i++) {
                 if (i == 9) {
                     break;
                 }
-                var url23 = 'bbs.kgu?major=main&num=23&mode=view&id=' + bbs23[i].id;
-                text23 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                    + '<a href="' + url23 + '"><span class="index_post_link">' + bbs23[i].title + '</span></a>'
-                    + '<a href="' + url23 + '"><span class="index_post_time">' + formatDate(bbs23[i].last_modified) + '</span></a>'
+                var url54 = 'bbs.kgu?major=main&num=54&mode=view&id=' + bbs54[i].id;
+                text54 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+                    + '<a href="' + url54 + '"><span class="index_post_link">' + bbs54[i].title + '</span></a>'
+                    + '<a href="' + url54 + '"><span class="index_post_time">' + formatDate(bbs54[i].last_modified) + '</span></a>'
                     + '</li>';
             }
-            text23 += '</ul>';
-            notice23.append(text23);
+            text54 += '</ul>';
+            notice54.append(text54);
         }
 
         var menuPageList = <%=menuPageList%>;
+        var getAllMajor=<%=getAllMajor%>;
         var nav11tab = $('#nav-11-tab');
-        var nav22tab = $('#nav-22-tab');
-        var nav23tab = $('#nav-23-tab');
+        var nav52tab = $('#nav-52-tab');
+        var nav54tab = $('#nav-54-tab');
         var tab_name_11 = '';
-        var tab_name_22 = '';
-        var tab_name_23 = '';
+        var tab_name_52 = '';
+        var tab_name_54 = '';
 
         if (menuPageList != null) {
             for (var i = 0; i < menuPageList.length; i++) {
@@ -433,13 +414,15 @@
                     tab_name_11 = menuPageList[i].page_title;
                     nav11tab.append('<strong>' + tab_name_11 + '</strong>');
                 }
-                if (menuPageList[i].page_id == '22') {
-                    tab_name_22 = menuPageList[i].page_title;
-                    nav22tab.append('<strong>' + tab_name_22 + '</strong>');
+                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '52') {
+                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0] )
+                    tab_name_52 = major[0].major_name + " " + menuPageList[i].page_title;
+                    nav52tab.append('<strong>' + tab_name_52 + '</strong>');
                 }
-                if (menuPageList[i].page_id == '23') {
-                    tab_name_23 = menuPageList[i].page_title;
-                    nav23tab.append('<strong>' + tab_name_23 + '</strong>');
+                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '54') {
+                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0] )
+                    tab_name_54 = major[0].major_name + " " + menuPageList[i].page_title;
+                    nav54tab.append('<strong>' + tab_name_54 + '</strong>');
                     break;
                 }
             }

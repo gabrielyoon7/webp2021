@@ -23,6 +23,7 @@
     var type = <%=typeForMyPage%>;
     var today = new Date();
     var reg_day = new Date(user.reg_date);
+    var getAllMajor=<%=getAllMajor%>;
     // var betweenDay = (today.getTime() - reg_day.getTime())/24/1000/60/60;
     var betweenDay = (today.getTime() - reg_day.getTime())/(24 * 60 * 60 * 1000);
 
@@ -46,7 +47,21 @@
             a += '<div class="col-4 border-end py-2">학과</div><div class="col-8 py-2">'+user.major+'</div>';
             a += '<div class="col-4 border-end py-2">학번(교번)</div><div class="col-8 py-2">'+ user.per_id+'</div>';
             a += '<div class="col-4 border-end py-2">학년</div><div class="col-8 py-2">'+ user.grade+'</div>';
-            a += '<div class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'+ user.sub_major+'</div>';
+            // a += '<div class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'
+            const sub_major = user.sub_major.split('-/-/-');
+            let sub_major_text = '';
+            for(var j=0; j<getAllMajor.length; j++){
+                for(var i=0; i<sub_major.length; i++) {
+                    if (sub_major[i] == getAllMajor[j].major_id) {
+                        sub_major_text += getAllMajor[j].major_name + '<br>';
+                    }
+                }
+            }
+            if(sub_major_text === ''){
+                sub_major_text = user.sub_major;
+            }
+            a += '<div class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'+ sub_major_text + '</div>';
+            // a += '<div/ class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'+ user.sub_major+'</div>';
             a += '<div class="col-4 border-end py-2">상태</div><div class="col-8 py-2">'+ user.state+'</div>';
         }
         a +='</div>'
@@ -100,13 +115,13 @@
 
         $('#sub_major_select').append(text_sub_major);
 
-        var usersub_major = user.sub_major.split("<br>");
+        var usersub_major = user.sub_major.split("-/-/-");
 
         console.log(usersub_major)
 
-        for(var j=0; j<usersub_major.length; j++){
+        for(var j=0; j<usersub_major.length - 1; j++){
             for(var i=0; i<getAllMajor.length; i++) {
-                    if (getAllMajor[i].major_name == usersub_major[j]) {
+                    if (getAllMajor[i].major_id == usersub_major[j]) {
                         $('#checkbox'+i).prop('checked', true);
                     }
             }
