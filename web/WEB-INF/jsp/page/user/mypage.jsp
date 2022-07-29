@@ -36,7 +36,7 @@
 
     function setdata(){
         var a ='<div class="row" id="panel">';
-        a +='<div class="py-lg-5 py-4 col-lg-4 d-flex justify-content-center" id="panel1"><img src="'+user.google_img+'" onerror="this.src=\'http://placehold.it/200x200\'" style="height: 200px" class="rounded-circle img-responsive my-lg-5"></div>';
+        // a +='<div class="py-lg-5 py-4 col-lg-4 d-flex justify-content-center" id="panel1"><img src="'+user.google_img+'" onerror="this.src=\'http://placehold.it/200x200\'" style="height: 200px" class="rounded-circle img-responsive my-lg-5"></div>';
         a +='<div class="py-4 col-lg-8">'
         a += '<div id="panel2" class="row"><div>안녕하세요 '+user.name+'님, 오늘은 가입한 지 <span style="color : red;">'+ (parseInt(betweenDay)+1) +'</span>일째입니다.</div><hr>';
         a += '<div class="col-4 border-end py-2">전화번호</div><div class="col-8 py-2">'+ user.phone+'</div>';
