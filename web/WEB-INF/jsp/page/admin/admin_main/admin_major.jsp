@@ -147,6 +147,16 @@
 
   function addMajor(){
     var major_id=$('#add_major_id').val();
+
+    if (major_id == ''){
+      swal.fire({
+        title : '전공 아이디를 입력해주세요.',
+        icon : 'warning',
+        showConfirmButton: true
+      });
+      return;
+    }
+
     var major_name=$('#add_major_name').val();
     var major_location=$('#add_major_location').val();
     var major_contact=$('#add_major_contact').val();
@@ -208,7 +218,11 @@
           },
           success: function (data) {
             if (data == 'fail') {
-              alert('fail');
+              swal.fire({
+                title: '실패',
+                icon: 'error',
+                showConfirmButton: true
+              });
               return;
             }
             swal.fire({
