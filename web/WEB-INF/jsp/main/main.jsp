@@ -84,7 +84,7 @@
 <%--                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--%>
 <%--                    </div>--%>
                 </div>
-                    <div class="row align-items-md-stretch px-2 px-sm-5 mx-sm-5 my-5">
+                    <div class="row align-items-md-stretch px-2 px-sm-5 mx-md-5 my-5">
                         <%--                            left side start--%>
 <%--                        <div class="col" id="main1_left">--%>
                             <div class="col-xxl-6 my-2">
