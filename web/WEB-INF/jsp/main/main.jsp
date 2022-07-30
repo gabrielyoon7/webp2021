@@ -83,10 +83,11 @@
 <%--                        <strong>주의!</strong> 아직 개발 중인 홈페이지입니다.--%>
 <%--                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--%>
 <%--                    </div>--%>
-                    <div class="row align-items-md-stretch">
+                </div>
+                    <div class="row align-items-md-stretch px-2 px-sm-5 mx-sm-5 my-5">
                         <%--                            left side start--%>
-                        <div class="col-xxl" id="main1_left">
-                            <div class="py-2 col-12">
+<%--                        <div class="col" id="main1_left">--%>
+                            <div class="col-xxl-6 my-2">
                                 <%--                                    carousel start--%>
                                 <div id="myCarousel" class="h-100 carousel slide card border border-primary"
                                      data-bs-ride="carousel" style="margin-bottom : 0px; height:399px;">
@@ -110,78 +111,81 @@
                                 <%--                                    carousel end--%>
                             </div>
                             <%--                                bbs and reg start--%>
-                            <div class="row">
-                                <div class="col-xl-6 py-2 " id="main2_left">
-                                    <div class=" p-3 card border border-primary m-0" style="height : 550px;">
-                                        <div class="">
-                                            <div class="mb-2 d-flex justify-content-between border-bottom">
-                                                <div class="nav nav-tabs " id="nav-tab" role="tablist">
-                                                    <button class="nav-link active" id="nav-11-tab"
-                                                            data-bs-toggle="tab" data-bs-target="#nav-11"
-                                                            type="button" role="tab" aria-controls="nav-home"
-                                                            aria-selected="true"
-                                                            onclick="clickBBS('more_link1', 11)"></button>
-                                                    <button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-52" type="button" role="tab"
-                                                            aria-controls="nav-profile" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 52)"></button>
-                                                    <button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-54" type="button" role="tab"
-                                                            aria-controls="nav-contact" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 54)"></button>
-                                                </div>
-                                                <div class="morebtn">
-                                                    <div class="py-2">
-                                                        <a id="more_link1" href="bbs.kgu?major=main&num=11" data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i class="bi bi-plus-lg"></i></a>
+                            <div class=" col-xxl-6">
+                                <div class="row">
+                                    <div class="col-xl-6 my-2" id="main2_left">
+                                        <div class=" p-3 card border border-primary m-0" style="height : 450px;">
+                                            <div class="">
+                                                <div class="mb-2 d-flex justify-content-between border-bottom">
+                                                    <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                                                        <button class="nav-link active" id="nav-11-tab"
+                                                                data-bs-toggle="tab" data-bs-target="#nav-11"
+                                                                type="button" role="tab" aria-controls="nav-home"
+                                                                aria-selected="true"
+                                                                onclick="clickBBS('more_link1', 11)"></button>
+                                                        <button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"
+                                                                data-bs-target="#nav-52" type="button" role="tab"
+                                                                aria-controls="nav-profile" aria-selected="false"
+                                                                onclick="clickBBS('more_link1', 52)"></button>
+                                                        <button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"
+                                                                data-bs-target="#nav-54" type="button" role="tab"
+                                                                aria-controls="nav-contact" aria-selected="false"
+                                                                onclick="clickBBS('more_link1', 54)"></button>
+                                                    </div>
+                                                    <div class="morebtn">
+                                                        <div class="py-2">
+                                                            <a id="more_link1" href="bbs.kgu?major=main&num=11" data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="tab-content" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="nav-11" role="tabpanel"
-                                                 aria-labelledby="nav-11-tab"></div>
-                                            <div class="tab-pane fade" id="nav-52" role="tabpanel"
-                                                 aria-labelledby="nav-52-tab"></div>
-                                            <div class="tab-pane fade" id="nav-54" role="tabpanel"
-                                                 aria-labelledby="nav-54-tab"></div>
-                                        </div>
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane fade show active" id="nav-11" role="tabpanel"
+                                                     aria-labelledby="nav-11-tab"></div>
+                                                <div class="tab-pane fade" id="nav-52" role="tabpanel"
+                                                     aria-labelledby="nav-52-tab"></div>
+                                                <div class="tab-pane fade" id="nav-54" role="tabpanel"
+                                                     aria-labelledby="nav-54-tab"></div>
+                                            </div>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-xl-6 py-2 " id="main2_center">
-                                    <div class=" p-3 border border-primary card m-0" style="height : 550px;">
-                                        <div>
-                                            <div class="mb-2 d-flex justify-content-between border-bottom">
-                                                <div class="nav nav-tabs" id="nav-tab2" role="tablist">
-                                                    <button class="nav-link active" id="nav-31-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-31" type="button" role="tab"
-                                                            aria-controls="nav-home" aria-selected="true"
-                                                            onclick="clickBBS('more_link2', 31)"></button>
-                                                    <button class="nav-link" id="nav-12-tab"
-                                                            data-bs-toggle="tab" data-bs-target="#nav-12"
-                                                            type="button" role="tab" aria-controls="nav-profile"
-                                                            aria-selected="false"
-                                                            onclick="clickBBS('more_link2', 12)"></button>
-                                                </div>
-                                                <div class="morebtn">
-                                                    <div class="py-2">
-                                                        <a id="more_link2" href="reg.kgu?major=main&num=30" data-bs-toggle="tooltip" data-bs-placement="top"  title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                    <div class="col-xl-6 my-2" id="main2_center">
+                                        <div class=" p-3 border border-primary card m-0" style="height : 450px;">
+                                            <div>
+                                                <div class="mb-2 d-flex justify-content-between border-bottom">
+                                                    <div class="nav nav-tabs" id="nav-tab2" role="tablist">
+                                                        <button class="nav-link active" id="nav-31-tab" data-bs-toggle="tab"
+                                                                data-bs-target="#nav-31" type="button" role="tab"
+                                                                aria-controls="nav-home" aria-selected="true"
+                                                                onclick="clickBBS('more_link2', 31)"></button>
+                                                        <button class="nav-link" id="nav-12-tab"
+                                                                data-bs-toggle="tab" data-bs-target="#nav-12"
+                                                                type="button" role="tab" aria-controls="nav-profile"
+                                                                aria-selected="false"
+                                                                onclick="clickBBS('more_link2', 12)"></button>
+                                                    </div>
+                                                    <div class="morebtn">
+                                                        <div class="py-2">
+                                                            <a id="more_link2" href="reg.kgu?major=main&num=30" data-bs-toggle="tooltip" data-bs-placement="top"  title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="tab-content" id="nav-tabContent2">
-                                            <div class="tab-pane fade show active" id="nav-31" role="tabpanel"
-                                                 aria-labelledby="nav-31-tab"></div>
-                                            <div class="tab-pane fade" id="nav-12" role="tabpanel"
-                                                 aria-labelledby="nav-12-tab"></div>
+                                            <div class="tab-content" id="nav-tabContent2">
+                                                <div class="tab-pane fade show active" id="nav-31" role="tabpanel"
+                                                     aria-labelledby="nav-31-tab"></div>
+                                                <div class="tab-pane fade" id="nav-12" role="tabpanel"
+                                                     aria-labelledby="nav-12-tab"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <%-- bbs and reg end--%>
                             </div>
-                            <%-- bbs and reg end--%>
-                        </div>
+
+<%--                        </div>--%>
                         <%--                            left side end--%>
 
 
@@ -213,7 +217,7 @@
                         <%--                            left side end--%>
                     </div>
 
-                </div>
+
                 <%--                    container end--%>
 
                 <!-- search schedule Modal -->
@@ -623,7 +627,7 @@
             width: 800px;
         }
         .carousel-img {
-            height: 580px;
+            height: 480px;
         }
     }
 
@@ -632,13 +636,13 @@
             width: 290px;
         }
         .carousel-img {
-            height: 600px;
+            height: 500px;
         }
     }
 
     @media (min-width: 1400px) {
         .carousel-img {
-            height: 700px;
+            height: 450px;
         }
 
         .index_post_link {
@@ -648,7 +652,7 @@
 
     @media (min-width: 1600px) {
         .index_post_link {
-            width: 450px;
+            width: 500px;
         }
         .title_logo, .title_text{
             float: left;
