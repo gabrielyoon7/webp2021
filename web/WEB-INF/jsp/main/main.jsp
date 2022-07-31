@@ -646,7 +646,7 @@
         }
     }
 
-    @media (min-width: 1600px) {
+    @media (min-width: 992px) {
         .index_post_link {
             width: 337px;
         }
@@ -655,7 +655,7 @@
         }
     }
 
-    @media (max-width: 1600px) {
+    @media (max-width: 992px) {
         .header_title {
             text-align: center;
         }
