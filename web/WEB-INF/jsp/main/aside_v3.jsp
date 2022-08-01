@@ -77,9 +77,9 @@
             text += '</li>';
         }
 
-        //전공 선택
         text += '<li class="sidebar-title">전공메뉴</li>';
-        text += '<li class="sidebar-item  has-sub" style="margin-bottom: 50px;">'
+        //전공 선택
+        text += '<li class="sidebar-item  has-sub">'
             + '<a href="#" class="sidebar-link">'
             + '<i class="bi bi-stack"></i>'
             + '<span>' + menuTabList[3].tab_title + '</span>'
@@ -100,6 +100,29 @@
             }
         }
         text += '</li>';
+        //트랙 선택
+        text += '<li class="sidebar-item  has-sub" style="margin-bottom: 50px;">'
+            + '<a href="#" class="sidebar-link">'
+            + '<i class="bi bi-stack"></i>'
+            + '<span>트랙</span>'
+            + '</a>';
+        for (var i = 1; i < majorAllInfo.length; i++) {
+            if(majorAllInfo[i].type=='track'){
+                text += '<ul class="submenu active" style="display: block;" >'
+                    + '<li class="submenu-item">'
+                    // +'<a data-bs-toggle="collapse" href="#collapseExample'+i+'" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="display('+i+')">'+majorAllInfo[i].major_name+'</a>'
+                    + '<a data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample">' + majorAllInfo[i].major_name + '</a>'
+                    // +'<div class="collapse" id="collapseExample'+i+'" style="display: none;">';
+                    + '<div class="collapse" id="collapseExample' + i + '">';
+                for (var j = tab5start; j < tab5end; j++) {
+                    var url = menuPageList[j].page_path + '?major=' + majorAllInfo[i].major_id + '&num=' + menuPageList[j].page_id;
+                    text += '<div class="ms-3"><a href="' + url + '">○ ' + menuPageList[j].page_title + '</a></div>';
+                }
+                text += '</div>' + '</li></ul>';
+            }
+        }
+        text += '</li>';
+
 
         list.append(text);
     }
