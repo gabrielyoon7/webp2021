@@ -41,7 +41,7 @@
     String bbs54 = (String) request.getAttribute("bbs54");
     String bbs12 = (String) request.getAttribute("bbs12");
     String bbs31 = (String) request.getAttribute("bbs31");
-    String getAllMajor = (String)request.getAttribute("getAllMajor");
+    String getAllMajor = (String) request.getAttribute("getAllMajor");
     String registerAllInfo = (String) request.getAttribute("registerAllInfo");
 %>
 <!DOCTYPE html>
@@ -116,23 +116,29 @@
                                         <div class="">
                                             <div class="mb-2 d-flex justify-content-between border-bottom">
                                                 <div class="nav nav-tabs " id="nav-tab" role="tablist">
-                                                    <button class="nav-link active" id="nav-11-tab"
-                                                            data-bs-toggle="tab" data-bs-target="#nav-11"
-                                                            type="button" role="tab" aria-controls="nav-home"
+                                                    <button class="nav-link active"
+                                                            id="nav-11-tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#nav-11"
+                                                            type="button"
+                                                            role="tab"
+                                                            aria-controls="nav-home"
                                                             aria-selected="true"
                                                             onclick="clickBBS('more_link1', 11)"></button>
-                                                    <button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-52" type="button" role="tab"
-                                                            aria-controls="nav-profile" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 52)"></button>
-                                                    <button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"
-                                                            data-bs-target="#nav-54" type="button" role="tab"
-                                                            aria-controls="nav-contact" aria-selected="false"
-                                                            onclick="clickBBS('more_link1', 54)"></button>
+                                                    <%--                                                    <button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"--%>
+                                                    <%--                                                            data-bs-target="#nav-52" type="button" role="tab"--%>
+                                                    <%--                                                            aria-controls="nav-profile" aria-selected="false"--%>
+                                                    <%--                                                            onclick="clickBBS('more_link1', 52)"></button>--%>
+                                                    <%--                                                    <button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"--%>
+                                                    <%--                                                            data-bs-target="#nav-54" type="button" role="tab"--%>
+                                                    <%--                                                            aria-controls="nav-contact" aria-selected="false"--%>
+                                                    <%--                                                            onclick="clickBBS('more_link1', 54)"></button>--%>
                                                 </div>
                                                 <div class="morebtn">
                                                     <div class="py-2">
-                                                        <a id="more_link1" href="bbs.kgu?major=main&num=11" data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                                        <a id="more_link1" href="bbs.kgu?major=main&num=11"
+                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i
+                                                                class="bi bi-plus-lg"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,10 +146,10 @@
                                         <div class="tab-content" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="nav-11" role="tabpanel"
                                                  aria-labelledby="nav-11-tab"></div>
-                                            <div class="tab-pane fade" id="nav-52" role="tabpanel"
-                                                 aria-labelledby="nav-52-tab"></div>
-                                            <div class="tab-pane fade" id="nav-54" role="tabpanel"
-                                                 aria-labelledby="nav-54-tab"></div>
+                                            <%--                                            <div class="tab-pane fade" id="nav-52" role="tabpanel"--%>
+                                            <%--                                                 aria-labelledby="nav-52-tab"></div>--%>
+                                            <%--                                            <div class="tab-pane fade" id="nav-54" role="tabpanel"--%>
+                                            <%--                                                 aria-labelledby="nav-54-tab"></div>--%>
                                         </div>
 
                                     </div>
@@ -166,7 +172,9 @@
                                                 </div>
                                                 <div class="morebtn">
                                                     <div class="py-2">
-                                                        <a id="more_link2" href="reg.kgu?major=main&num=30" data-bs-toggle="tooltip" data-bs-placement="top"  title="더보기"><i class="bi bi-plus-lg"></i></a>
+                                                        <a id="more_link2" href="reg.kgu?major=main&num=30"
+                                                           data-bs-toggle="tooltip" data-bs-placement="top" title="더보기"><i
+                                                                class="bi bi-plus-lg"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -186,30 +194,33 @@
 
 
                         <%--                            right side start--%>
-                                                <div class="col-xxl-3" id="main1_right">
-                                                    <div class="row">
-                                                        <div class="py-2 col-xxl-12 col-sm-6">
-                                                            <div class=" h-100 border border-primary card m-0" id="favorite_menu" style=""></div>
-                                                        </div>
-                                                        <div class="py-2 col-xxl-12 col-sm-6">
-                                                            <div class=" p-3 border border-primary card m-0" style="height : 493px;">
-                                                                <div class="mb-2 d-flex justify-content-between border-bottom">
-                                                                    <div class="nav nav-tabs" role="tablist">
-                                                                        <button class="nav-link active"><strong>주요 일정</strong></button>
-                                                                    </div>
-                                                                    <div class="morebtn">
-                                                                        <div class="py-2">
-                                                                            <a data-bs-toggle="tooltip" data-bs-placement="top"  title="일정 보기">
-                                                                                <i class="bi bi-plus-lg col-sm-2 text-end" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addSearchModal()"></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="tab-content" id="schContent" style=""></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                        <div class="col-xxl-3" id="main1_right">
+                            <div class="row">
+                                <div class="py-2 col-xxl-12 col-sm-6">
+                                    <div class=" h-100 border border-primary card m-0" id="favorite_menu"
+                                         style=""></div>
+                                </div>
+                                <div class="py-2 col-xxl-12 col-sm-6">
+                                    <div class=" p-3 border border-primary card m-0" style="height : 493px;">
+                                        <div class="mb-2 d-flex justify-content-between border-bottom">
+                                            <div class="nav nav-tabs" role="tablist">
+                                                <button class="nav-link active"><strong>주요 일정</strong></button>
+                                            </div>
+                                            <div class="morebtn">
+                                                <div class="py-2">
+                                                    <a data-bs-toggle="tooltip" data-bs-placement="top" title="일정 보기">
+                                                        <i class="bi bi-plus-lg col-sm-2 text-end"
+                                                           data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                           onclick="addSearchModal()"></i>
+                                                    </a>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="schContent" style=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <%--                            left side end--%>
                     </div>
 
@@ -253,7 +264,9 @@
 </div>
 <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <%--<script src="/assets/js/bootstrap.bundle.min.js"></script>--%>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script src="/assets/js/main.js"></script>
 <%--<script>--%>
 
@@ -267,7 +280,6 @@
 
     $(document).ready(function () {
         makeHeaderTitle(); //Header Title 제작
-
         makeFavoriteMenu();
         makeScheduleInfo();
         makeCarouselCard();
@@ -364,23 +376,54 @@
             text11 += '</ul>';
             notice11.append(text11);
         }
-        var bbs52 =<%=bbs52%>;
-        if (bbs52 != null) {
-            var notice52 = $('#nav-52');
-            var text52 = '<ul class="list-group">';
-            for (var i = 0; i < bbs52.length; i++) {
-                if (i == 9) {
+
+        var menuPageList = <%=menuPageList%>;
+        var getAllMajor =<%=getAllMajor%>;
+        var nav11tab = $('#nav-11-tab');
+        var tab_name_11 = '';
+        var tab_name_52 = '';
+        var tab_name_54 = '';
+
+        if (menuPageList != null) {
+            for (var i = 0; i < menuPageList.length; i++) {
+                if (menuPageList[i].page_id == '11') {
+                    tab_name_11 = menuPageList[i].page_title;
+                    nav11tab.append('<strong>' + tab_name_11 + '</strong>');
+                }
+                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '52') {
+                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0])
+                    tab_name_52 = major[0].major_name + " " + menuPageList[i].page_title;
+                    makeBBS52(tab_name_52);
+                }
+                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '54') {
+                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0])
+                    tab_name_54 = major[0].major_name + " " + menuPageList[i].page_title;
+                    makeBBS54(tab_name_54);
                     break;
                 }
-                var url52 = 'bbs.kgu?major=main&num=52&mode=view&id=' + bbs52[i].id;
-                text52 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
-                    + '<a href="' + url52 + '"><span class="index_post_link">' + bbs52[i].title + '</span></a>'
-                    + '<a href="' + url52 + '"><span class="index_post_time">' + formatDate(bbs52[i].last_modified) + '</span></a>'
-                    + '</li>';
             }
-            text52 += '</ul>';
-            notice52.append(text52);
         }
+    }
+
+    function makeBBS54(tab_name){
+        const nav_tab = $('#nav-tab');
+        const nav_tab_content = $('#nav-tabContent')
+        const tab_text = '<button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"'
+            + 'data-bs-target="#nav-52" type="button" role="tab"'
+            + 'aria-controls="nav-profile" aria-selected="false"'
+            + 'onclick="clickBBS("more_link1", 52)"><strong>' + tab_name + '</strong></button>'
+            + '<button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"'
+            + 'data-bs-target="#nav-54" type="button" role="tab"'
+            + 'aria-controls="nav-contact" aria-selected="false"'
+            + 'onclick="clickBBS("more_link1", 54)"></button>';
+        const nav_tabContent_text = '<div class="tab-pane fade" id="nav-52" role="tabpanel"'
+            + 'aria-labelledby="nav-52-tab"></div>'
+            + '<div class="tab-pane fade" id="nav-54" role="tabpanel"'
+            + 'aria-labelledby="nav-54-tab"></div>';
+
+        nav_tab.append(tab_text);
+        nav_tab_content.append(nav_tabContent_text);
+
         var bbs54 =<%=bbs54%>;
         if (bbs54 != null) {
             var notice54 = $('#nav-54');
@@ -398,34 +441,43 @@
             text54 += '</ul>';
             notice54.append(text54);
         }
+    }
 
-        var menuPageList = <%=menuPageList%>;
-        var getAllMajor=<%=getAllMajor%>;
-        var nav11tab = $('#nav-11-tab');
-        var nav52tab = $('#nav-52-tab');
-        var nav54tab = $('#nav-54-tab');
-        var tab_name_11 = '';
-        var tab_name_52 = '';
-        var tab_name_54 = '';
+    function makeBBS52(tab_name){
+        const nav_tab = $('#nav-tab');
+        const nav_tab_content = $('#nav-tabContent')
+        const tab_text = '<button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"'
+            + 'data-bs-target="#nav-52" type="button" role="tab"'
+            + 'aria-controls="nav-profile" aria-selected="false"'
+            + 'onclick="clickBBS("more_link1", 52)"><strong>' + tab_name + '</strong></button>'
+            + '<button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"'
+            + 'data-bs-target="#nav-54" type="button" role="tab"'
+            + 'aria-controls="nav-contact" aria-selected="false"'
+            + 'onclick="clickBBS("more_link1", 54)"></button>';
+        const nav_tabContent_text = '<div class="tab-pane fade" id="nav-52" role="tabpanel"'
+            + 'aria-labelledby="nav-52-tab"></div>'
+            + '<div class="tab-pane fade" id="nav-54" role="tabpanel"'
+            + 'aria-labelledby="nav-54-tab"></div>';
 
-        if (menuPageList != null) {
-            for (var i = 0; i < menuPageList.length; i++) {
-                if (menuPageList[i].page_id == '11') {
-                    tab_name_11 = menuPageList[i].page_title;
-                    nav11tab.append('<strong>' + tab_name_11 + '</strong>');
-                }
-                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '52') {
-                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0] )
-                    tab_name_52 = major[0].major_name + " " + menuPageList[i].page_title;
-                    nav52tab.append('<strong>' + tab_name_52 + '</strong>');
-                }
-                if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '54') {
-                    const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0] )
-                    tab_name_54 = major[0].major_name + " " + menuPageList[i].page_title;
-                    nav54tab.append('<strong>' + tab_name_54 + '</strong>');
+        nav_tab.append(tab_text);
+        nav_tab_content.append(nav_tabContent_text);
+
+        var bbs52 =<%=bbs52%>;
+        if (bbs52 != null) {
+            var notice52 = $('#nav-52');
+            var text52 = '<ul class="list-group">';
+            for (var i = 0; i < bbs52.length; i++) {
+                if (i == 9) {
                     break;
                 }
+                var url52 = 'bbs.kgu?major=main&num=52&mode=view&id=' + bbs52[i].id;
+                text52 += '<li class="py-2 px-0 border-0 list-group-item list-group-item-action d-flex justify-content-between">'
+                    + '<a href="' + url52 + '"><span class="index_post_link">' + bbs52[i].title + '</span></a>'
+                    + '<a href="' + url52 + '"><span class="index_post_time">' + formatDate(bbs52[i].last_modified) + '</span></a>'
+                    + '</li>';
             }
+            text52 += '</ul>';
+            notice52.append(text52);
         }
     }
 
@@ -559,6 +611,7 @@
         .index_post_link {
             width: 100px;
         }
+
         /*.carousel-img {*/
         /*    height: 140px;*/
         /*}*/
@@ -568,6 +621,7 @@
         .index_post_link {
             width: 150px;
         }
+
         /*.carousel-img {*/
         /*    height: 160px;*/
         /*}*/
@@ -577,6 +631,7 @@
         .index_post_link {
             width: 200px;
         }
+
         /*.carousel-img {*/
         /*    height: 180px;*/
         /*}*/
@@ -586,6 +641,7 @@
         .index_post_link {
             width: 250px;
         }
+
         /*.carousel-img {*/
         /*    height: 200px;*/
         /*}*/
@@ -595,6 +651,7 @@
         .index_post_link {
             width: 300px;
         }
+
         /*.carousel-img {*/
         /*    height: 220px;*/
         /*}*/
@@ -604,6 +661,7 @@
         .index_post_link {
             width: 390px;
         }
+
         /*.carousel-img {*/
         /*    height: 250px;*/
         /*}*/
@@ -613,6 +671,7 @@
         .index_post_link {
             width: 560px;
         }
+
         /*.carousel-img {*/
         /*    height: 350px;*/
         /*}*/
@@ -622,6 +681,7 @@
         .index_post_link {
             width: 800px;
         }
+
         /*.carousel-img {*/
         /*    height: 580px;*/
         /*}*/
@@ -631,6 +691,7 @@
         .index_post_link {
             width: 280px;
         }
+
         /*.carousel-img {*/
         /*    height: 600px;*/
         /*}*/
@@ -650,7 +711,8 @@
         .index_post_link {
             width: 337px;
         }
-        .title_logo, .title_text{
+
+        .title_logo, .title_text {
             float: left;
         }
     }
@@ -659,10 +721,12 @@
         .header_title {
             text-align: center;
         }
-        .title_logo, .title_text{
+
+        .title_logo, .title_text {
             float: none;
         }
-        .title_logo{
+
+        .title_logo {
             display: none;
         }
     }
