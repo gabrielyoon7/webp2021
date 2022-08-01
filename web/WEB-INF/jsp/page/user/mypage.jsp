@@ -60,7 +60,7 @@
             if(sub_major_text === ''){
                 sub_major_text = user.sub_major;
             }
-            a += '<div class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'+ sub_major_text + '</div>';
+            a += '<div class="col-4 border-end py-2">전공/트랙</div><div class="col-8 py-2">'+ sub_major_text + '</div>';
             // a += '<div/ class="col-4 border-end py-2">부전공</div><div class="col-8 py-2">'+ user.sub_major+'</div>';
             a += '<div class="col-4 border-end py-2">상태</div><div class="col-8 py-2">'+ user.state+'</div>';
         }
@@ -88,7 +88,7 @@
             a += '<div class="col-4 border-end py-2">학과</div><div class="col-8 py-2">'+user.major+'</div>';
             a += '<div class="col-4 border-end py-2">학번(교번)</div><div class="col-8 py-2">'+ user.per_id+'</div>';
             a += '<div class="col-4 border-end py-2">학년</div><div class="col-8 py-2" id="grade_select"></div>';
-            a += '<div class="col-4 border-end py-2">부전공</div><div class="col-8 py-2" id="sub_major_select"></div>';
+            a += '<div class="col-4 border-end py-2">전공/트랙</div><div class="col-8 py-2" id="sub_major_select"></div>';
             a += '<div class="col-4 border-end py-2">상태</div><div class="col-8 py-2" id="state_select"></div>';
         }
         $('#text').empty();
