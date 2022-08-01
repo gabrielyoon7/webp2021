@@ -144,6 +144,10 @@ public class HomeDAO {
         try {
             QueryRunner queryRunner = new QueryRunner();
             listOfMaps = queryRunner.query(conn,"SELECT * FROM text WHERE major = ? AND id =?;", new MapListHandler(), major, num);
+            if(listOfMaps.size()==0){
+                queryRunner.update(conn,"INSERT INTO text(id,major,content) VALUE(?,?,?);", num, major, "관리자 모드에서 내용을 수정해주세요.");
+                listOfMaps = queryRunner.query(conn,"SELECT * FROM text WHERE major = ? AND id =?;", new MapListHandler(), major, num);
+            }
         } catch(SQLException se) {
             se.printStackTrace();
         } finally {
