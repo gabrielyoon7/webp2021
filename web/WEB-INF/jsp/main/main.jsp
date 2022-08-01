@@ -351,9 +351,9 @@
         document.getElementById(link_id).setAttribute('href', 'bbs.kgu?major=main&num=' + i + '');
     }
 
-    function clickNoticeReg(id, i) {
+    function clickBBS2(id, major_id, i) {
         var link_id = id;
-        document.getElementById(link_id).setAttribute('href', 'reg.kgu?major=main&num=' + i + '');
+        document.getElementById(link_id).setAttribute('href', 'bbs.kgu?major=' + major_id + '&num=' + i + '');
     }
 
     function makeNoticeBBS() {
@@ -393,32 +393,27 @@
                 if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '52') {
                     const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0])
                     tab_name_52 = major[0].major_name + " " + menuPageList[i].page_title;
-                    makeBBS52(tab_name_52);
+                    makeBBS52(tab_name_52, major[0].major_id);
                 }
                 if (user !== null && user.sub_major !== '-' && menuPageList[i].page_id == '54') {
                     const major = getAllMajor.filter(maj => maj.major_id === user.sub_major.split("-/-/-")[0])
                     tab_name_54 = major[0].major_name + " " + menuPageList[i].page_title;
-                    makeBBS54(tab_name_54);
+                    makeBBS54(tab_name_54, major[0].major_id);
                     break;
                 }
             }
         }
     }
 
-    function makeBBS54(tab_name){
+    function makeBBS54(tab_name, major_id){
+        console.log("'more_link1'," + major_id + ', 54)')
         const nav_tab = $('#nav-tab');
         const nav_tab_content = $('#nav-tabContent')
-        const tab_text = '<button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"'
-            + 'data-bs-target="#nav-52" type="button" role="tab"'
-            + 'aria-controls="nav-profile" aria-selected="false"'
-            + 'onclick="clickBBS("more_link1", 52)"><strong>' + tab_name + '</strong></button>'
-            + '<button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"'
+        const tab_text = '<button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"'
             + 'data-bs-target="#nav-54" type="button" role="tab"'
             + 'aria-controls="nav-contact" aria-selected="false"'
-            + 'onclick="clickBBS("more_link1", 54)"></button>';
-        const nav_tabContent_text = '<div class="tab-pane fade" id="nav-52" role="tabpanel"'
-            + 'aria-labelledby="nav-52-tab"></div>'
-            + '<div class="tab-pane fade" id="nav-54" role="tabpanel"'
+            + 'onclick="clickBBS2(' + "'more_link1', '" + major_id + "', 54)" + '"><strong>' + tab_name + '</strong></button>';
+        const nav_tabContent_text = '<div class="tab-pane fade" id="nav-54" role="tabpanel"'
             + 'aria-labelledby="nav-54-tab"></div>';
 
         nav_tab.append(tab_text);
@@ -443,21 +438,15 @@
         }
     }
 
-    function makeBBS52(tab_name){
+    function makeBBS52(tab_name, major_id){
         const nav_tab = $('#nav-tab');
         const nav_tab_content = $('#nav-tabContent')
         const tab_text = '<button class="nav-link" id="nav-52-tab" data-bs-toggle="tab"'
             + 'data-bs-target="#nav-52" type="button" role="tab"'
             + 'aria-controls="nav-profile" aria-selected="false"'
-            + 'onclick="clickBBS("more_link1", 52)"><strong>' + tab_name + '</strong></button>'
-            + '<button class="nav-link" id="nav-54-tab" data-bs-toggle="tab"'
-            + 'data-bs-target="#nav-54" type="button" role="tab"'
-            + 'aria-controls="nav-contact" aria-selected="false"'
-            + 'onclick="clickBBS("more_link1", 54)"></button>';
+            + 'onclick="clickBBS2(' + "'more_link1', '" + major_id + "', 52)" + '"><strong>' + tab_name + '</strong></button>';
         const nav_tabContent_text = '<div class="tab-pane fade" id="nav-52" role="tabpanel"'
-            + 'aria-labelledby="nav-52-tab"></div>'
-            + '<div class="tab-pane fade" id="nav-54" role="tabpanel"'
-            + 'aria-labelledby="nav-54-tab"></div>';
+            + 'aria-labelledby="nav-52-tab"></div>';
 
         nav_tab.append(tab_text);
         nav_tab_content.append(nav_tabContent_text);
