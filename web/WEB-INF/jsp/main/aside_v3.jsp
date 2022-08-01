@@ -85,18 +85,19 @@
             + '<span>' + menuTabList[3].tab_title + '</span>'
             + '</a>';
         for (var i = 1; i < majorAllInfo.length; i++) {
-            text += '<ul class="submenu active" style="display: block;" >'
-                + '<li class="submenu-item">'
-                // +'<a data-bs-toggle="collapse" href="#collapseExample'+i+'" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="display('+i+')">'+majorAllInfo[i].major_name+'</a>'
-                + '<a data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample">' + majorAllInfo[i].major_name + '</a>'
-                // +'<div class="collapse" id="collapseExample'+i+'" style="display: none;">';
-                + '<div class="collapse" id="collapseExample' + i + '">';
-            for (var j = tab5start; j < tab5end; j++) {
-                var url = menuPageList[j].page_path + '?major=' + majorAllInfo[i].major_id + '&num=' + menuPageList[j].page_id;
-                text += '<div class="ms-3"><a href="' + url + '">○ ' + menuPageList[j].page_title + '</a></div>';
+            if(majorAllInfo[i].type=='major'){
+                text += '<ul class="submenu active" style="display: block;" >'
+                    + '<li class="submenu-item">'
+                    // +'<a data-bs-toggle="collapse" href="#collapseExample'+i+'" role="button" aria-expanded="false" aria-controls="collapseExample" onclick="display('+i+')">'+majorAllInfo[i].major_name+'</a>'
+                    + '<a data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample">' + majorAllInfo[i].major_name + '</a>'
+                    // +'<div class="collapse" id="collapseExample'+i+'" style="display: none;">';
+                    + '<div class="collapse" id="collapseExample' + i + '">';
+                for (var j = tab5start; j < tab5end; j++) {
+                    var url = menuPageList[j].page_path + '?major=' + majorAllInfo[i].major_id + '&num=' + menuPageList[j].page_id;
+                    text += '<div class="ms-3"><a href="' + url + '">○ ' + menuPageList[j].page_title + '</a></div>';
+                }
+                text += '</div>' + '</li></ul>';
             }
-            text += '</div>'
-                + '</li></ul>';
         }
         text += '</li>';
 

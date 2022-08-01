@@ -121,10 +121,11 @@ CREATE TABLE major(
     `major_name` VARCHAR(100) NOT NULL,
     `major_location` VARCHAR(100) NOT NULL,
     `major_contact` VARCHAR(100) NOT NULL,
-     PRIMARY KEY (`oid`)
+    `type` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`oid`)
 );
 
-INSERT INTO major(oid,major_id,major_name,major_location,major_contact) VALUE('1','main','융합교육원 SWAIG','수원캠퍼스 예지관(4강의동) 4002호', '031-249-9288');
+INSERT INTO major(oid,major_id,major_name,major_location,major_contact,type) VALUE('1','main','융합교육원 SWAIG','수원캠퍼스 예지관(4강의동) 4002호', '031-249-9288', 'major');
 
 CREATE TABLE text(
     `id` int(50) NOT NULL,

@@ -1,7 +1,15 @@
 package kr.ac.kyonggi.swaig.handler.dto.settings;
 
 public class MajorDTO {
-    public String oid, major_id, major_name, major_location, major_contact;
+    public String oid, major_id, major_name, major_location, major_contact, type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getOid() {
         return oid;

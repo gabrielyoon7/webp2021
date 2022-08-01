@@ -47,7 +47,7 @@ public class AdminDAO {
                     return "fail";
                 }
             }
-            queryRunner.update(conn,"INSERT INTO major(major_id,major_name,major_location,major_contact) VALUE(?,?,?,?);", major_id,major_name,major_location,major_contact);
+            queryRunner.update(conn,"INSERT INTO major(major_id,major_name,major_location,major_contact,type) VALUE(?,?,?,?,?);", major_id,major_name,major_location,major_contact,"major");
             queryRunner.update(conn,"INSERT INTO text(id,major,content) VALUE(?,?,?);", 50,major_id,nullText);
             queryRunner.update(conn,"INSERT INTO text(id,major,content) VALUE(?,?,?);", 51,major_id,nullText);
             result = true;
