@@ -18,6 +18,7 @@
     <thead>
     <tr>
       <th data-field="action">설정</th>
+      <th data-field="major_type" data-sortable="true">타입</th>
       <th data-field="major_id" data-sortable="true">아이디</th>
       <th data-field="major_name" data-sortable="true">전공이름</th>
       <th data-field="major_location" data-sortable="true">학과위치</th>
@@ -44,7 +45,19 @@
     var rows = [];
     for(var i=0;i<makeAllMajor.length;i++){
       var major=makeAllMajor[i];
+      var type;
+      if (major.type == 'major'){
+        type = '전공'
+      }
+      else if(major.type == 'track'){
+        type= '트랙'
+      }
+      else {
+        type = '에러'
+      }
+      major.major_id=='main'?type='메인':null
       rows.push({
+        major_type: type,
         major_id: major.major_id,
         major_name: major.major_name,
         major_location: major.major_location,

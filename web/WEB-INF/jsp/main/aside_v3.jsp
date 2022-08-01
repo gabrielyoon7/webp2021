@@ -40,21 +40,6 @@
         var major =<%=major%>;
         var list = $('#asideMenu');
 
-        var tab5start = 0;
-        for (var a = 0; a < menuPageList.length; a++) {
-            if (menuPageList[a].tab_id == 5) {
-                tab5start = a;
-                break;
-            }
-        }
-        var tab5end = 0;
-        for (var a = 0; a < menuPageList.length; a++) {
-            if (menuPageList[a].tab_id == 6) {
-                tab5end = a;
-                break;
-            }
-        }
-
         var text = '';
         text += '<li class="sidebar-title">공통메뉴</li>';
         //기본 메뉴
@@ -77,8 +62,26 @@
             text += '</li>';
         }
 
+
         text += '<li class="sidebar-title">전공메뉴</li>';
+
         //전공 선택
+
+        var tab5start = 0;
+        for (var a = 0; a < menuPageList.length; a++) {
+            if (menuPageList[a].tab_id == 5) {
+                tab5start = a;
+                break;
+            }
+        }
+        var tab5end = 0;
+        for (var a = 0; a < menuPageList.length; a++) {
+            if (menuPageList[a].tab_id == 6) {
+                tab5end = a;
+                break;
+            }
+        }
+
         text += '<li class="sidebar-item  has-sub">'
             + '<a href="#" class="sidebar-link">'
             + '<i class="bi bi-stack"></i>'
@@ -100,7 +103,25 @@
             }
         }
         text += '</li>';
+
+
         //트랙 선택
+
+        var tab4start = 0;
+        for (var a = 0; a < menuPageList.length; a++) {
+            if (menuPageList[a].tab_id == 4) {
+                tab4start = a;
+                break;
+            }
+        }
+        var tab4end = 0;
+        for (var a = 0; a < menuPageList.length; a++) {
+            if (menuPageList[a].tab_id == 5) {
+                tab4end = a;
+                break;
+            }
+        }
+
         text += '<li class="sidebar-item  has-sub" style="margin-bottom: 50px;">'
             + '<a href="#" class="sidebar-link">'
             + '<i class="bi bi-stack"></i>'
@@ -114,7 +135,7 @@
                     + '<a data-bs-toggle="collapse" href="#collapseExample' + i + '" role="button" aria-expanded="false" aria-controls="collapseExample">' + majorAllInfo[i].major_name + '</a>'
                     // +'<div class="collapse" id="collapseExample'+i+'" style="display: none;">';
                     + '<div class="collapse" id="collapseExample' + i + '">';
-                for (var j = tab5start; j < tab5end; j++) {
+                for (var j = tab4start; j < tab4end; j++) {
                     var url = menuPageList[j].page_path + '?major=' + majorAllInfo[i].major_id + '&num=' + menuPageList[j].page_id;
                     text += '<div class="ms-3"><a href="' + url + '">○ ' + menuPageList[j].page_title + '</a></div>';
                 }
@@ -122,7 +143,6 @@
             }
         }
         text += '</li>';
-
 
         list.append(text);
     }
