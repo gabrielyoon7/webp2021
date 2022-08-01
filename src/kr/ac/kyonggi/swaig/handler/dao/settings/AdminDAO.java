@@ -32,6 +32,7 @@ public class AdminDAO {
         String major_name = arr[1];
         String major_location = arr[2];
         String major_contact = arr[3];
+        String major_type = arr[4];
         String nullText = "수정을 해주세요";
         String majorId;
         Connection conn = Config.getInstance().sqlLogin();
@@ -47,7 +48,7 @@ public class AdminDAO {
                     return "fail";
                 }
             }
-            queryRunner.update(conn,"INSERT INTO major(major_id,major_name,major_location,major_contact,type) VALUE(?,?,?,?,?);", major_id,major_name,major_location,major_contact,"major");
+            queryRunner.update(conn,"INSERT INTO major(major_id,major_name,major_location,major_contact,type) VALUE(?,?,?,?,?);", major_id,major_name,major_location,major_contact,major_type);
             queryRunner.update(conn,"INSERT INTO text(id,major,content) VALUE(?,?,?);", 50,major_id,nullText);
             queryRunner.update(conn,"INSERT INTO text(id,major,content) VALUE(?,?,?);", 51,major_id,nullText);
             result = true;

@@ -9,7 +9,7 @@
 <style>
 </style>
 <div class="">
-  <label><h2><strong>부전공 관리 (홈페이지 하위 전공 관련)</strong></h2></label>
+  <label><h2><strong>SWAIG 전공/트랙 관리</strong></h2> <h4>(좌측 '전공메뉴' 관련)</h4></label>
   <script src="/assets/vendors/sweetalert2/sweetalert2.all.min.js"></script>
   <table class="boardtable" id="table1"  data-toggle="table"
          data-pagination="true" data-toolbar="#toolbar"
@@ -18,7 +18,7 @@
     <thead>
     <tr>
       <th data-field="action">설정</th>
-      <th data-field="major_id" data-sortable="true">전공아이디</th>
+      <th data-field="major_id" data-sortable="true">아이디</th>
       <th data-field="major_name" data-sortable="true">전공이름</th>
       <th data-field="major_location" data-sortable="true">학과위치</th>
       <th data-field="major_contact" data-sortable="true">학과연락처</th>
@@ -125,13 +125,19 @@
 
   function makeAddMajorModal(){
     var modal_header = '';
-    modal_header += '<h5 class="modal-title" id="staticBackdropLabel">전공 추가하기</h5>';
+    modal_header += '<h5 class="modal-title" id="staticBackdropLabel">SWAIG 전공/트랙 추가하기</h5>';
     modal_header += '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
 
     var modal_body = '';
-    modal_body += '<div>전공 아이디 (영문/숫자 혼용 가능) </div>'
-      + '<input type="text" class="form-control" id="add_major_id" name="new_table" value="" placeholder="전공아이디를 입력해주세요(수정 불가능)">'
-      +'<mark>※ 한번 생성하신 전공 아이디는 수정하실 수 없습니다.<br>url을 비롯하여 시스템 내부적으로 사용되는 값이므로<br>전공의 약자(略字) 등을 활용하여 신중하게 결정해주세요.<br>(ex. 컴퓨터과학과(Computer Science) => 전공 아이디 : cs)</mark>'
+    modal_body += '<div>아이디 (영문/숫자 혼용 가능) </div>'
+      + '<input type="text" class="form-control" id="add_major_id" name="new_table" value="" placeholder="아이디를 입력해주세요(수정 불가능 / 띄어쓰기 금지)">'
+      +'<mark>※ 한번 생성하신 아이디는 수정하실 수 없고 삭제만 가능합니다.<br>url을 비롯하여 시스템 내부적으로 사용되는 값이므로<br>전공의 약자(略字) 등을 활용하여 신중하게 결정해주세요.<br>(ex. 컴퓨터과학과(Computer Science) => 전공 아이디 : cs)</mark>'
+      + '<div>타입</div>'
+      + '<select class="form-select" id="add_major_type" name="new_table" aria-label="Default select example">'
+        + '<option value="">선택해주세요.</option>'
+        + '<option value="major">전공</option>'
+        + '<option value="track">트랙</option>'
+      + '</select>'
       + '<div>전공이름</div><input type="text" class="form-control" id="add_major_name" name="new_table" value="" placeholder="전공이름을 입력해주세요">'
       + '<div>학과위치</div><input type="text" class="form-control" id="add_major_location" name="new_table" value="" placeholder="학과위치를 입력해주세요">'
       + '<div>학과연락처</div><input type="text" class="form-control" id="add_major_contact" name="new_table" value="" placeholder="학과연락처를 입력해주세요">';
@@ -147,20 +153,22 @@
 
   function addMajor(){
     var major_id=$('#add_major_id').val();
+    var major_name=$('#add_major_name').val();
+    var major_location=$('#add_major_location').val();
+    var major_contact=$('#add_major_contact').val();
+    let major_type=$('#add_major_type').val();
 
-    if (major_id == ''){
+    if (major_id == '' || major_name == '' || major_location == '' || major_contact == '' || major_type == ''){
       swal.fire({
-        title : '전공 아이디를 입력해주세요.',
+        title : '모두 입력해주세요.',
         icon : 'warning',
         showConfirmButton: true
       });
       return;
     }
 
-    var major_name=$('#add_major_name').val();
-    var major_location=$('#add_major_location').val();
-    var major_contact=$('#add_major_contact').val();
-    var data=major_id+'-/-/-'+major_name+'-/-/-'+major_location+'-/-/-'+major_contact;
+
+    var data=major_id+'-/-/-'+major_name+'-/-/-'+major_location+'-/-/-'+major_contact+'-/-/-'+major_type;
 
       $.ajax({
           url: "ajax.kgu", //AjaxAction에서
