@@ -9,6 +9,7 @@
 <%
     String typeForInformation = (String)session.getAttribute("type");
     String information = (String)request.getAttribute("information");
+//    String num = (String)request.getAttribute("num");
 %>
 <script src="/assets/vendors/sweetalert2/sweetalert2.all.min.js"></script>
 
@@ -22,6 +23,7 @@
 
     var typeForInformation = <%=typeForInformation%>;
     var information = <%=information%>;
+    <%--var num = <%=num%>;--%>
     function makeInformation() {
         var data = $('#information_content');
         if(information!=null){
@@ -34,9 +36,21 @@
                 button.append('<button class="btn btn-primary" onclick="modify()">수정</button>');
             }
 
+
+            // if(num=="80") { // 신청방법 페이지면
+            //     console.log("신청방법");
+            //     // var button1 = $('#modify_button');
+            //     // button1.append('<button class="btn btn-primary" onclick="modify()">수정</button>');
+            //
+            //     var text1 = '';
+            //     text1+='<button type="button" class="btn btn-primary" style = "margin : 2px;" href="#">신청하기</button>';
+            // }
+
             data.append(text);
+            // data.append(text1);
         }
 
+        // console.log(num);
     }
 
     function modify(){

@@ -125,8 +125,14 @@
         text += '<li class="sidebar-item  has-sub" style="margin-bottom: 50px;">'
             + '<a href="#" class="sidebar-link">'
             + '<i class="bi bi-stack"></i>'
-            + '<span>트랙</span>'
+            + '<span>SW 심화 트랙</span>'
             + '</a>';
+        text += '<ul class="submenu active" style="display: block;" >'
+            + '<li class="submenu-item">'
+            + '<a href="information.kgu?major=main&num=80">신청방법</a>'
+            // +'<div class="collapse" id="collapseExample'+i+'" style="display: none;">';
+            + '<div class="collapse" id="collapseExample">'
+        + '</div>' + '</li></ul>';
         for (var i = 1; i < majorAllInfo.length; i++) {
             if(majorAllInfo[i].type=='track'){
                 text += '<ul class="submenu active" style="display: block;" >'
