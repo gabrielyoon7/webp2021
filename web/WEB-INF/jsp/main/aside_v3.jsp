@@ -84,7 +84,7 @@
 
         text += '<li class="sidebar-item  has-sub">'
             + '<a href="#" class="sidebar-link">'
-            + '<i class="bi bi-stack"></i>'
+            + '<i class="bi bi-gear-wide-connected"></i>'
             + '<span>' + menuTabList[3].tab_title + '</span>'
             + '</a>';
         for (var i = 1; i < majorAllInfo.length; i++) {
@@ -124,7 +124,7 @@
 
         text += '<li class="sidebar-item  has-sub" style="margin-bottom: 50px;">'
             + '<a href="#" class="sidebar-link">'
-            + '<i class="bi bi-stack"></i>'
+            + '<i class="bi bi-lightbulb"></i>'
             + '<span>SW 심화 트랙</span>'
             + '</a>';
         text += '<ul class="submenu active" style="display: block;" >'

@@ -150,7 +150,24 @@
         }
         if(page_title!=''){
             if(major=='main'){
-                text = '<h2><i class="bi bi-info-circle-fill"></i><strong>  '+ page_title + '</strong></h2>';
+                if(page_title == 'SWAIG 개요소개') {
+                    text = '<h2><i class="bi bi-bookmark"></i><strong>  '+ page_title + '</strong></h2>';
+                }
+                else if (page_title == 'SWAIG 공지') {
+                    text = '<h2><i class="bi bi-journal-text"></i><strong>  '+ page_title + '</strong></h2>';
+                }
+                else if (page_title == 'SWAIG 앨범') {
+                    text = '<h2><i class="bi bi-camera"></i><strong>  '+ page_title + '</strong></h2>';
+                }
+                else if (page_title == '나노디그리') {
+                    text = '<h2><i class="bi bi-flag"></i><strong>  '+ page_title + '</strong></h2>';
+                }
+                else if (page_title == 'SWAIG 교과목 리스트' || page_title == 'SWAIG 교과목 개요' || page_title == 'SWAIG 교과목 개설현황') {
+                    text = '<h2><i class="bi bi-book"></i><strong>  '+ page_title + '</strong></h2>';
+                }
+                else {
+                    text = '<h2><i class="bi bi-info-circle-fill"></i><strong>  ' + page_title + '</strong></h2>';
+                }
             }
             else {
                 for (var j = 0 ; j < majorInfo.length; j++){
@@ -159,8 +176,18 @@
                         break;
                     }
                 }
-                text = '<h2><i class="bi bi-info-circle-fill"></i><strong>  '+majorTitle+' : ' + page_title + '</strong></h2>';
-            }
+                if (page_title == '교수소개') {
+                    text = '<h2><i class="bi bi-person-circle"></i><strong>  '+majorTitle+' : ' + page_title + '</strong></h2>';
+                }
+                else if (page_title == '취업/공모전공지'){
+                    text = '<h2><i class="bi bi-award"></i><strong>  '+majorTitle+' : ' + page_title + '</strong></h2>';
+                }
+                else if (page_title == '트랙소개'){
+                    text = '<h2><i class="bi bi-info-circle-fill"></i><strong>  '+majorTitle+' : ' + page_title + '</strong></h2>';
+                }
+                else {
+                    text = '<h2><i class="bi bi-journal-text"></i><strong>  '+majorTitle+' : ' + page_title + '</strong></h2>';
+                }}
             list.append(text);
         }
     }
